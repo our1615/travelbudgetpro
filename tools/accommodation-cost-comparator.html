@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Accommodation Cost Comparator | Travel Budget Pro</title>
+<meta name="description" content="Compare hotels, hostels, and short-term rentals side by side. Includes cleaning fees, taxes, resort fees, and total real cost.">
+<meta property="og:title" content="Accommodation Cost Comparator | Travel Budget Pro">
+<meta property="og:description" content="Compare hotels, hostels, and rentals with all fees included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/accommodation-cost-comparator.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/accommodation-cost-comparator.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Accommodation Cost Comparator",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Compare hotels, hostels, and short-term rentals side by side with all fees included.",
+  "url": "https://travelbudgetpro.org/tools/accommodation-cost-comparator.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Accommodation Cost Comparator", "item": "https://travelbudgetpro.org/tools/accommodation-cost-comparator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Accommodation Comparator</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Accommodation Cost Comparator</h1>
+  <p>Hotels, hostels, and short-term rentals — with cleaning fees, taxes, and resort fees included. See the real total before you book.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Hotel total = nightly rate × nights + resort fees × nights + tax + parking. Hostel total = private room × nights + extras. Rental total = nightly × nights + cleaning fee + service fee + tax. We show the real total, not the advertised rate.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Enter nights and guests. Fill in the hotel rate with resort fees, tax, and parking. Add hostel private room rate and extras. Enter rental nightly rate with cleaning fee, service fee percentage, and tax. Click Compare. The bar chart shows true totals. The cheapest option is highlighted.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Always include resort fees and cleaning fees — they can add 30% to the advertised price. For short stays (1-2 nights), hotels often beat rentals because cleaning fees are spread over fewer nights. Save comparisons to revisit before booking. Export the full fee breakdown.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Trip Details</h3>
+      <div class="tbp-input-group">
+        <label for="acc-destination">Destination Type</label>
+        <select id="acc-destination">
+          <option value="europe-city">European City</option>
+          <option value="us-city" selected>US City</option>
+          <option value="asia-city">Asian City</option>
+          <option value="beach-resort">Beach Resort</option>
+          <option value="mountain">Mountain / Rural</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-nights">Nights</label>
+        <input type="number" id="acc-nights" min="1" value="5">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-guests">Guests</label>
+        <input type="number" id="acc-guests" min="1" value="2">
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Hotel Option</h3>
+      <div class="tbp-input-group">
+        <label for="acc-hotel-nightly">Nightly Rate ($)</label>
+        <input type="number" id="acc-hotel-nightly" min="0" value="120">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-hotel-resort">Resort Fee per Night ($)</label>
+        <input type="number" id="acc-hotel-resort" min="0" value="25">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-hotel-tax">Tax Rate (%)</label>
+        <input type="number" id="acc-hotel-tax" min="0" max="30" value="14">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-hotel-parking">Parking per Night ($)</label>
+        <input type="number" id="acc-hotel-parking" min="0" value="30">
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Hostel Option</h3>
+      <div class="tbp-input-group">
+        <label for="acc-hostel-bed">Bed per Night ($)</label>
+        <input type="number" id="acc-hostel-bed" min="0" value="35">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-hostel-private">Private Room per Night ($)</label>
+        <input type="number" id="acc-hostel-private" min="0" value="80">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-hostel-extras">Extras (locker, towel, etc.) ($)</label>
+        <input type="number" id="acc-hostel-extras" min="0" value="15">
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Rental / Airbnb Option</h3>
+      <div class="tbp-input-group">
+        <label for="acc-rental-nightly">Nightly Rate ($)</label>
+        <input type="number" id="acc-rental-nightly" min="0" value="90">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-rental-cleaning">Cleaning Fee ($)</label>
+        <input type="number" id="acc-rental-cleaning" min="0" value="100">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-rental-service">Service Fee (%)</label>
+        <input type="number" id="acc-rental-service" min="0" max="30" value="12">
+      </div>
+      <div class="tbp-input-group">
+        <label for="acc-rental-tax">Tax / Tourist Tax (%)</label>
+        <input type="number" id="acc-rental-tax" min="0" max="30" value="5">
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="compareAccommodation()">Compare</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetAcc()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Real Cost Comparison</h3>
+      <div id="acc-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Cheapest Option</div>
+          <div class="tbp-result-number" id="acc-best">—</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Savings vs Most Expensive</div>
+          <div class="tbp-result-number" id="acc-savings">$0</div>
+        </div>
+        <canvas id="acc-chart" class="tbp-chart-container" width="400" height="280"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveAcc()">Save Comparison</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportAcc()">Export</button>
+        </div>
+      </div>
+      <div id="acc-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">🏨</div>
+        <p>Enter rates and fees for all three options, then click Compare.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Detailed Breakdown</h3>
+      <div id="acc-table" style="max-height:400px;overflow:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Calculate to see fee-by-fee breakdown.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Saved Comparisons</h3>
+      <div id="acc-history" style="max-height:400px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No saved comparisons yet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid">
+    <a href="../blog/airbnb-vs-hotel-vs-hostel-a-complete-cost-analysis-for-every.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Airbnb vs Hotel vs Hostel: Complete Cost Analysis</h3>
+        <p>Megan's $150 cleaning fee surprise and how to avoid it.</p>
+      </div>
+    </a>
+    <a href="../blog/the-complete-guide-to-budgeting-for-hidden-travel-costs-tips.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>The Complete Guide to Hidden Travel Costs</h3>
+        <p>Resort fees, tourist taxes, cleaning fees, and the €900 scratch.</p>
+      </div>
+    </a>
+    <a href="../blog/sustainable-tourism-taxes-the-new-hidden-cost-in-popular-des.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Sustainable Tourism Taxes</h3>
+        <p>Venice €24, Amsterdam 12.5%, Barcelona €4/night — the new normal.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+let currentResult = null;
+
+function compareAccommodation() {
+  const nights = parseInt(document.getElementById('acc-nights').value) || 1;
+  const guests = parseInt(document.getElementById('acc-guests').value) || 1;
+
+  // Hotel
+  const hotelNightly = parseFloat(document.getElementById('acc-hotel-nightly').value) || 0;
+  const hotelResort = parseFloat(document.getElementById('acc-hotel-resort').value) || 0;
+  const hotelTaxPct = parseFloat(document.getElementById('acc-hotel-tax').value) || 0;
+  const hotelParking = parseFloat(document.getElementById('acc-hotel-parking').value) || 0;
+  const hotelSubtotal = (hotelNightly + hotelResort) * nights;
+  const hotelTax = hotelSubtotal * (hotelTaxPct / 100);
+  const hotelParkingTotal = hotelParking * nights;
+  const hotelTotal = hotelSubtotal + hotelTax + hotelParkingTotal;
+
+  // Hostel
+  const hostelBed = parseFloat(document.getElementById('acc-hostel-bed').value) || 0;
+  const hostelPrivate = parseFloat(document.getElementById('acc-hostel-private').value) || 0;
+  const hostelExtras = parseFloat(document.getElementById('acc-hostel-extras').value) || 0;
+  const hostelTotal = (hostelPrivate * nights) + hostelExtras;
+
+  // Rental
+  const rentalNightly = parseFloat(document.getElementById('acc-rental-nightly').value) || 0;
+  const rentalCleaning = parseFloat(document.getElementById('acc-rental-cleaning').value) || 0;
+  const rentalServicePct = parseFloat(document.getElementById('acc-rental-service').value) || 0;
+  const rentalTaxPct = parseFloat(document.getElementById('acc-rental-tax').value) || 0;
+  const rentalSubtotal = rentalNightly * nights;
+  const rentalService = rentalSubtotal * (rentalServicePct / 100);
+  const rentalTax = (rentalSubtotal + rentalCleaning + rentalService) * (rentalTaxPct / 100);
+  const rentalTotal = rentalSubtotal + rentalCleaning + rentalService + rentalTax;
+
+  const options = [
+    {name: 'Hotel', total: hotelTotal, base: hotelSubtotal, fees: hotelTax + hotelParkingTotal, details: 'Nightly: $' + hotelNightly + ' × ' + nights + ' + Resort $' + hotelResort + ' × ' + nights + ' + Tax ' + hotelTaxPct + '% + Parking $' + hotelParking + ' × ' + nights},
+    {name: 'Hostel', total: hostelTotal, base: hostelPrivate * nights, fees: hostelExtras, details: 'Private room: $' + hostelPrivate + ' × ' + nights + ' + Extras $' + hostelExtras},
+    {name: 'Rental', total: rentalTotal, base: rentalSubtotal, fees: rentalCleaning + rentalService + rentalTax, details: 'Nightly: $' + rentalNightly + ' × ' + nights + ' + Cleaning $' + rentalCleaning + ' + Service ' + rentalServicePct + '% + Tax ' + rentalTaxPct + '%'}
+  ];
+
+  options.sort((a, b) => a.total - b.total);
+  const best = options[0];
+  const worst = options[options.length - 1];
+  const savings = worst.total - best.total;
+
+  currentResult = {
+    id: Date.now(),
+    nights, guests,
+    hotel: {nightly: hotelNightly, resort: hotelResort, tax: hotelTaxPct, parking: hotelParking, total: hotelTotal},
+    hostel: {private: hostelPrivate, extras: hostelExtras, total: hostelTotal},
+    rental: {nightly: rentalNightly, cleaning: rentalCleaning, service: rentalServicePct, tax: rentalTaxPct, total: rentalTotal},
+    best: best.name, savings
+  };
+
+  document.getElementById('acc-best').textContent = best.name + ' ($' + Math.round(best.total).toLocaleString() + ')';
+  document.getElementById('acc-savings').textContent = '$' + Math.round(savings).toLocaleString();
+  document.getElementById('acc-results').style.display = 'block';
+  document.getElementById('acc-placeholder').style.display = 'none';
+
+  drawAccChart(options);
+  renderAccTable(options);
+}
+
+function drawAccChart(options) {
+  const canvas = document.getElementById('acc-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  const padding = 50;
+  const chartW = rect.width - padding * 2;
+  const chartH = rect.height - padding * 2;
+  const maxVal = Math.max(...options.map(o => o.total)) * 1.15;
+  const barW = 60;
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7'];
+
+  // Grid
+  ctx.strokeStyle = '#e9ecef';
+  for (let i = 0; i <= 4; i++) {
+    const y = padding + chartH * (i / 4);
+    ctx.beginPath();
+    ctx.moveTo(padding, y);
+    ctx.lineTo(padding + chartW, y);
+    ctx.stroke();
+    ctx.fillStyle = '#6c757d';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('$' + Math.round(maxVal * (1 - i/4)), padding - 6, y + 3);
+  }
+
+  // Bars
+  options.forEach((o, i) => {
+    const h = (o.total / maxVal) * chartH;
+    const x = padding + (i + 0.5) * (chartW / 3) - barW/2;
+    const y = padding + chartH - h;
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(x, y, barW, h);
+    ctx.fillStyle = '#212529';
+    ctx.font = 'bold 11px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('$' + Math.round(o.total).toLocaleString(), x + barW/2, y - 8);
+    ctx.font = '11px sans-serif';
+    ctx.fillText(o.name, x + barW/2, padding + chartH + 16);
+  });
+
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Total Cost Comparison (All Fees Included)', rect.width/2, 16);
+}
+
+function renderAccTable(options) {
+  const container = document.getElementById('acc-table');
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>Option</th><th>Base Rate</th><th>Fees & Taxes</th><th>Total</th></tr></thead><tbody>';
+  options.forEach(o => {
+    const isBest = o.name === currentResult.best;
+    html += '<tr' + (isBest ? ' style="background:#e8f5e9;font-weight:700;"' : '') + '>';
+    html += '<td>' + o.name + (isBest ? ' ✅' : '') + '</td>';
+    html += '<td>$' + Math.round(o.base).toLocaleString() + '</td>';
+    html += '<td>$' + Math.round(o.fees).toLocaleString() + '</td>';
+    html += '<td>$' + Math.round(o.total).toLocaleString() + '</td></tr>';
+    html += '<tr><td colspan="4" style="font-size:0.8rem;color:var(--tbp-muted);padding-top:0;">' + o.details + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function saveAcc() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('acc-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 5) history = history.slice(0, 5);
+  localStorage.setItem('acc-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('acc-history') || '[]');
+  const container = document.getElementById('acc-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No saved comparisons yet.</p>';
+    return;
+  }
+  let html = '';
+  history.forEach((h, idx) => {
+    html += '<div style="background:var(--tbp-bg);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="loadHistory(' + idx + ')">';
+    html += '<div style="font-weight:700;font-size:0.9rem;">' + h.nights + ' nights · ' + h.guests + ' guests</div>';
+    html += '<div style="font-size:0.8rem;color:var(--tbp-muted);">Best: ' + h.best + ' · Saved: $' + Math.round(h.savings).toLocaleString() + '</div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('acc-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+  document.getElementById('acc-nights').value = h.nights;
+  document.getElementById('acc-guests').value = h.guests;
+  document.getElementById('acc-hotel-nightly').value = h.hotel.nightly;
+  document.getElementById('acc-hotel-resort').value = h.hotel.resort;
+  document.getElementById('acc-hotel-tax').value = h.hotel.tax;
+  document.getElementById('acc-hotel-parking').value = h.hotel.parking;
+  document.getElementById('acc-hostel-private').value = h.hostel.private;
+  document.getElementById('acc-hostel-extras').value = h.hostel.extras;
+  document.getElementById('acc-rental-nightly').value = h.rental.nightly;
+  document.getElementById('acc-rental-cleaning').value = h.rental.cleaning;
+  document.getElementById('acc-rental-service').value = h.rental.service;
+  document.getElementById('acc-rental-tax').value = h.rental.tax;
+  currentResult = h;
+  document.getElementById('acc-best').textContent = h.best + ' ($' + Math.round(h[h.best.toLowerCase()].total).toLocaleString() + ')';
+  document.getElementById('acc-savings').textContent = '$' + Math.round(h.savings).toLocaleString();
+  document.getElementById('acc-results').style.display = 'block';
+  document.getElementById('acc-placeholder').style.display = 'none';
+  const options = [
+    {name: 'Hotel', total: h.hotel.total, base: h.hotel.nightly * h.nights, fees: h.hotel.total - (h.hotel.nightly * h.nights)},
+    {name: 'Hostel', total: h.hostel.total, base: h.hostel.private * h.nights, fees: h.hostel.extras},
+    {name: 'Rental', total: h.rental.total, base: h.rental.nightly * h.nights, fees: h.rental.total - (h.rental.nightly * h.nights)}
+  ];
+  options.sort((a, b) => a.total - b.total);
+  drawAccChart(options);
+  renderAccTable(options);
+}
+
+function exportAcc() {
+  if (!currentResult) return;
+  const h = currentResult;
+  let text = 'ACCOMMODATION COMPARISON REPORT — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'Nights: ' + h.nights + '
+Guests: ' + h.guests + '
+
+';
+  text += 'HOTEL
+';
+  text += 'Nightly: $' + h.hotel.nightly + ' × ' + h.nights + ' = $' + (h.hotel.nightly * h.nights) + '
+';
+  text += 'Resort fee: $' + h.hotel.resort + ' × ' + h.nights + '
+';
+  text += 'Tax: ' + h.hotel.tax + '%
+';
+  text += 'Parking: $' + h.hotel.parking + ' × ' + h.nights + '
+';
+  text += 'Total: $' + Math.round(h.hotel.total).toLocaleString() + '
+
+';
+  text += 'HOSTEL
+';
+  text += 'Private room: $' + h.hostel.private + ' × ' + h.nights + '
+';
+  text += 'Extras: $' + h.hostel.extras + '
+';
+  text += 'Total: $' + Math.round(h.hostel.total).toLocaleString() + '
+
+';
+  text += 'RENTAL
+';
+  text += 'Nightly: $' + h.rental.nightly + ' × ' + h.nights + '
+';
+  text += 'Cleaning: $' + h.rental.cleaning + '
+';
+  text += 'Service: ' + h.rental.service + '%
+';
+  text += 'Tax: ' + h.rental.tax + '%
+';
+  text += 'Total: $' + Math.round(h.rental.total).toLocaleString() + '
+
+';
+  text += 'WINNER: ' + h.best + ' (save $' + Math.round(h.savings).toLocaleString() + ')
+';
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'accommodation-comparison.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetAcc() {
+  document.getElementById('acc-nights').value = 5;
+  document.getElementById('acc-guests').value = 2;
+  document.getElementById('acc-hotel-nightly').value = 120;
+  document.getElementById('acc-hotel-resort').value = 25;
+  document.getElementById('acc-hotel-tax').value = 14;
+  document.getElementById('acc-hotel-parking').value = 30;
+  document.getElementById('acc-hostel-bed').value = 35;
+  document.getElementById('acc-hostel-private').value = 80;
+  document.getElementById('acc-hostel-extras').value = 15;
+  document.getElementById('acc-rental-nightly').value = 90;
+  document.getElementById('acc-rental-cleaning').value = 100;
+  document.getElementById('acc-rental-service').value = 12;
+  document.getElementById('acc-rental-tax').value = 5;
+  document.getElementById('acc-results').style.display = 'none';
+  document.getElementById('acc-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+renderHistory();
+</script>
+
+</body>
+</html>
