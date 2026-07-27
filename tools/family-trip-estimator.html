@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Family Trip Estimator | Travel Budget Pro</title>
+<meta name="description" content="Budget breakdown tailored to family travel. Includes kids' costs, all-inclusive vs DIY comparison, and hidden fees.">
+<meta property="og:title" content="Family Trip Estimator | Travel Budget Pro">
+<meta property="og:description" content="Family travel budget estimator with kids' costs and all-inclusive vs DIY comparison.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/family-trip-estimator.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/family-trip-estimator.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Family Trip Estimator",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Family travel budget estimator with kids' costs and all-inclusive vs DIY comparison.",
+  "url": "https://travelbudgetpro.org/tools/family-trip-estimator.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Family Trip Estimator", "item": "https://travelbudgetpro.org/tools/family-trip-estimator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Family Trip Estimator</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Family Trip Estimator</h1>
+  <p>Plan a family vacation with realistic costs for kids, accommodation, food, and activities. Compare all-inclusive vs DIY.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">We factor in adult costs plus child multipliers by age. Kids under 2 are free. Ages 2-4 add a small daily fee. Ages 5-12 add more. Teenagers add the most. Destination type and trip style (all-inclusive vs DIY) change the base rates significantly.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Enter adults, children, and ages. Pick destination type and trip style. Click Calculate. See total cost, per-person cost, per-day cost, and kids' extra costs. The comparison table shows all three styles side by side so you can pick the cheapest.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Save up to 5 family trips to compare scenarios. The tool highlights the cheapest style automatically. Theme parks cost more for kids — the calculator adds a park multiplier. Export your budget to share with your partner or travel agent.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Family Details</h3>
+      <div class="tbp-input-group">
+        <label for="fte-adults">Adults</label>
+        <input type="number" id="fte-adults" min="1" max="10" value="2">
+      </div>
+      <div class="tbp-input-group">
+        <label for="fte-kids">Children</label>
+        <input type="number" id="fte-kids" min="0" max="10" value="2">
+      </div>
+      <div class="tbp-input-group">
+        <label for="fte-kid-ages">Ages (comma separated, e.g. 7,10)</label>
+        <input type="text" id="fte-kid-ages" placeholder="7,10" value="7,10">
+      </div>
+      <div class="tbp-input-group">
+        <label for="fte-days">Trip Length (days)</label>
+        <input type="number" id="fte-days" min="1" max="30" value="7">
+      </div>
+      <div class="tbp-input-group">
+        <label for="fte-destination">Destination Type</label>
+        <select id="fte-destination">
+          <option value="beach">Beach Resort (Caribbean, Mexico)</option>
+          <option value="city" selected>City Break (Europe, US)</option>
+          <option value="theme">Theme Park (Disney, Universal)</option>
+          <option value="nature">National Parks / Camping</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="fte-style">Trip Style</label>
+        <select id="fte-style">
+          <option value="all-inclusive">All-Inclusive Resort</option>
+          <option value="diy-hotel" selected>DIY — Hotel + Restaurants</option>
+          <option value="diy-rental">DIY — Rental + Cooking</option>
+        </select>
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="calculateFamily()">Calculate</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetFamily()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Family Budget</h3>
+      <div id="fte-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Total Family Trip Cost</div>
+          <div class="tbp-result-number" id="fte-total">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Per Person</div>
+          <div class="tbp-result-number" id="fte-perperson">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Per Day</div>
+          <div class="tbp-result-number" id="fte-perday">$0</div>
+        </div>
+        <div class="tbp-result-box" id="fte-kid-box" style="background:#e8f5e9;">
+          <div class="tbp-result-label">Kids' Extra Costs</div>
+          <div class="tbp-result-number" id="fte-kid-cost" style="color:#1B4332;">$0</div>
+        </div>
+        <canvas id="fte-chart" class="tbp-chart-container" width="400" height="250"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveFamily()">Save</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportFamily()">Export</button>
+        </div>
+      </div>
+      <div id="fte-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">👨‍👩‍👧‍👦</div>
+        <p>Enter your family details and click Calculate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>All-Inclusive vs DIY Comparison</h3>
+      <div id="fte-comparison" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Calculate to see comparison.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Saved Family Trips</h3>
+      <div id="fte-history" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No saved trips yet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid">
+    <a href="../blog/the-family-who-blew-their-8k-vacation-budget-in-4-days-and-h.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>The Family Who Blew Their $8K Budget in 4 Days</h3>
+        <p>Karen and Mark's Disney disaster and recovery.</p>
+      </div>
+    </a>
+    <a href="../blog/family-vacation-budgeting-all-inclusive-vs-diy-and-the-hidde.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Family Vacation: All-Inclusive vs DIY</h3>
+        <p>Laura's $6,600 resort vs Mark's $4,200 DIY villa.</p>
+      </div>
+    </a>
+    <a href="../blog/all-inclusive-resort-vs-independent-travel-a-real-cost-compa.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>All-Inclusive vs Independent Travel</h3>
+        <p>Real cost comparison for families with kids.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+// Base costs per destination per day per adult (USD)
+const FAMILY_DESTINATIONS = {
+  beach: {allinclusive: 350, hotel: 200, rental: 140, food: 60, activities: 40, transport: 20, kidsFactor: 0.6},
+  city: {allinclusive: 0, hotel: 180, rental: 120, food: 70, activities: 50, transport: 25, kidsFactor: 0.5},
+  theme: {allinclusive: 0, hotel: 220, rental: 160, food: 80, activities: 120, transport: 30, kidsFactor: 0.8},
+  nature: {allinclusive: 0, hotel: 120, rental: 80, food: 50, activities: 30, transport: 40, kidsFactor: 0.4}
+};
+
+let currentResult = null;
+
+function calculateFamily() {
+  const adults = parseInt(document.getElementById('fte-adults').value) || 2;
+  const kids = parseInt(document.getElementById('fte-kids').value) || 0;
+  const agesText = document.getElementById('fte-kid-ages').value || '';
+  const days = parseInt(document.getElementById('fte-days').value) || 7;
+  const dest = document.getElementById('fte-destination').value;
+  const style = document.getElementById('fte-style').value;
+
+  const destData = FAMILY_DESTINATIONS[dest];
+  const ages = agesText.split(',').map(a => parseInt(a.trim())).filter(a => !isNaN(a));
+
+  let accommodation = 0;
+  let food = 0;
+  let activities = 0;
+  let transport = 0;
+  let kidExtra = 0;
+
+  if (style === 'all-inclusive') {
+    accommodation = destData.allinclusive * (adults + kids * destData.kidsFactor) * days;
+    food = 0;
+    activities = destData.activities * adults * days * 0.5;
+    transport = destData.transport * adults * days;
+  } else if (style === 'diy-hotel') {
+    accommodation = destData.hotel * (adults + kids * 0.5) * days;
+    food = destData.food * (adults + kids * 0.6) * days;
+    activities = destData.activities * (adults + kids * 0.7) * days;
+    transport = destData.transport * adults * days;
+  } else {
+    accommodation = destData.rental * days;
+    food = destData.food * 0.6 * (adults + kids * 0.5) * days;
+    activities = destData.activities * (adults + kids * 0.7) * days;
+    transport = destData.transport * adults * days;
+  }
+
+  // Kid-specific costs based on age
+  ages.forEach(age => {
+    if (age < 2) kidExtra += 0;
+    else if (age < 5) kidExtra += 15 * days;
+    else if (age < 12) kidExtra += 35 * days;
+    else kidExtra += 50 * days;
+  });
+
+  // Theme park multiplier
+  if (dest === 'theme') {
+    kidExtra += ages.length * 80 * days * 0.3;
+  }
+
+  const total = accommodation + food + activities + transport + kidExtra;
+  const totalPeople = adults + kids;
+
+  currentResult = {
+    id: Date.now(),
+    adults, kids, ages, days, dest, style,
+    total, accommodation, food, activities, transport, kidExtra,
+    perPerson: Math.round(total / totalPeople),
+    perDay: Math.round(total / days)
+  };
+
+  document.getElementById('fte-total').textContent = '$' + total.toLocaleString();
+  document.getElementById('fte-perperson').textContent = '$' + currentResult.perPerson.toLocaleString();
+  document.getElementById('fte-perday').textContent = '$' + currentResult.perDay.toLocaleString();
+  document.getElementById('fte-kid-cost').textContent = '$' + kidExtra.toLocaleString();
+  document.getElementById('fte-results').style.display = 'block';
+  document.getElementById('fte-placeholder').style.display = 'none';
+
+  drawFamilyChart(currentResult);
+  renderComparison(currentResult);
+}
+
+function drawFamilyChart(r) {
+  const canvas = document.getElementById('fte-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  const cats = ['Accommodation', 'Food', 'Activities', 'Transport', 'Kids Extra'];
+  const values = [r.accommodation, r.food, r.activities, r.transport, r.kidExtra];
+  const total = r.total;
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7', '#E76F51', '#6c757d'];
+
+  const cx = rect.width / 2;
+  const cy = rect.height / 2;
+  const radius = Math.min(cx, cy) - 45;
+
+  let start = -Math.PI / 2;
+  values.forEach((v, i) => {
+    const angle = (v / total) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, radius, start, start + angle);
+    ctx.closePath();
+    ctx.fillStyle = colors[i];
+    ctx.fill();
+    start += angle;
+  });
+
+  let ly = 10;
+  cats.forEach((l, i) => {
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(8, ly, 10, 10);
+    ctx.fillStyle = '#212529';
+    ctx.font = '11px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(l + ' $' + Math.round(values[i]).toLocaleString(), 22, ly + 9);
+    ly += 18;
+  });
+
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Total: $' + total.toLocaleString(), cx, cy + 4);
+}
+
+function renderComparison(r) {
+  const container = document.getElementById('fte-comparison');
+  const destData = FAMILY_DESTINATIONS[r.dest];
+  const totalPeople = r.adults + r.kids;
+
+  // Calculate all three styles
+  const styles = ['all-inclusive', 'diy-hotel', 'diy-rental'];
+  const styleNames = {'all-inclusive': 'All-Inclusive', 'diy-hotel': 'DIY Hotel', 'diy-rental': 'DIY Rental'};
+  const styleCosts = {};
+
+  styles.forEach(s => {
+    let acc = 0, fd = 0, act = 0, tr = 0;
+    if (s === 'all-inclusive') {
+      acc = destData.allinclusive * (r.adults + r.kids * destData.kidsFactor) * r.days;
+      fd = 0; act = destData.activities * r.adults * r.days * 0.5; tr = destData.transport * r.adults * r.days;
+    } else if (s === 'diy-hotel') {
+      acc = destData.hotel * (r.adults + r.kids * 0.5) * r.days;
+      fd = destData.food * (r.adults + r.kids * 0.6) * r.days;
+      act = destData.activities * (r.adults + r.kids * 0.7) * r.days;
+      tr = destData.transport * r.adults * r.days;
+    } else {
+      acc = destData.rental * r.days;
+      fd = destData.food * 0.6 * (r.adults + r.kids * 0.5) * r.days;
+      act = destData.activities * (r.adults + r.kids * 0.7) * r.days;
+      tr = destData.transport * r.adults * r.days;
+    }
+    styleCosts[s] = acc + fd + act + tr + r.kidExtra;
+  });
+
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>Style</th><th>Total</th><th>Per Person</th><th>Per Day</th></tr></thead><tbody>';
+  styles.forEach(s => {
+    const cost = styleCosts[s];
+    const isCurrent = s === r.style;
+    html += '<tr' + (isCurrent ? ' style="background:#e8f5e9;font-weight:700;"' : '') + '>';
+    html += '<td>' + styleNames[s] + (isCurrent ? ' (selected)' : '') + '</td>';
+    html += '<td>$' + cost.toLocaleString() + '</td>';
+    html += '<td>$' + Math.round(cost/totalPeople).toLocaleString() + '</td>';
+    html += '<td>$' + Math.round(cost/r.days).toLocaleString() + '</td></tr>';
+  });
+  html += '</tbody></table>';
+
+  const cheapest = styles.reduce((a, b) => styleCosts[a] < styleCosts[b] ? a : b);
+  const savings = styleCosts[r.style] - styleCosts[cheapest];
+  if (savings > 0 && r.style !== cheapest) {
+    html += '<p style="margin-top:12px;color:#1B4332;font-size:0.9rem;">💡 You could save <strong>$' + savings.toLocaleString() + '</strong> by switching to ' + styleNames[cheapest] + '.</p>';
+  }
+  container.innerHTML = html;
+}
+
+function saveFamily() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('fte-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 5) history = history.slice(0, 5);
+  localStorage.setItem('fte-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('fte-history') || '[]');
+  const container = document.getElementById('fte-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No saved trips yet.</p>';
+    return;
+  }
+  const destNames = {beach: 'Beach', city: 'City', theme: 'Theme Park', nature: 'Nature'};
+  const styleNames = {'all-inclusive': 'All-Incl', 'diy-hotel': 'DIY Hotel', 'diy-rental': 'DIY Rental'};
+  let html = '';
+  history.forEach((h, idx) => {
+    html += '<div style="background:var(--tbp-bg);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="loadHistory(' + idx + ')">';
+    html += '<div style="font-weight:700;font-size:0.9rem;">' + h.adults + ' adults + ' + h.kids + ' kids · ' + h.days + ' days</div>';
+    html += '<div style="font-size:0.8rem;color:var(--tbp-muted);">' + destNames[h.dest] + ' · ' + styleNames[h.style] + ' · $' + h.total.toLocaleString() + '</div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('fte-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+  document.getElementById('fte-adults').value = h.adults;
+  document.getElementById('fte-kids').value = h.kids;
+  document.getElementById('fte-kid-ages').value = h.ages.join(',');
+  document.getElementById('fte-days').value = h.days;
+  document.getElementById('fte-destination').value = h.dest;
+  document.getElementById('fte-style').value = h.style;
+  currentResult = h;
+  document.getElementById('fte-total').textContent = '$' + h.total.toLocaleString();
+  document.getElementById('fte-perperson').textContent = '$' + h.perPerson.toLocaleString();
+  document.getElementById('fte-perday').textContent = '$' + h.perDay.toLocaleString();
+  document.getElementById('fte-kid-cost').textContent = '$' + h.kidExtra.toLocaleString();
+  document.getElementById('fte-results').style.display = 'block';
+  document.getElementById('fte-placeholder').style.display = 'none';
+  drawFamilyChart(h);
+  renderComparison(h);
+}
+
+function exportFamily() {
+  if (!currentResult) return;
+  const h = currentResult;
+  const destNames = {beach: 'Beach Resort', city: 'City Break', theme: 'Theme Park', nature: 'National Parks'};
+  const styleNames = {'all-inclusive': 'All-Inclusive Resort', 'diy-hotel': 'DIY Hotel + Restaurants', 'diy-rental': 'DIY Rental + Cooking'};
+  let text = 'FAMILY TRIP BUDGET REPORT — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'Family: ' + h.adults + ' adults, ' + h.kids + ' children (ages ' + h.ages.join(', ') + ')
+';
+  text += 'Destination: ' + destNames[h.dest] + '
+';
+  text += 'Style: ' + styleNames[h.style] + '
+';
+  text += 'Duration: ' + h.days + ' days
+
+';
+  text += 'COST BREAKDOWN
+';
+  text += 'Accommodation: $' + h.accommodation.toLocaleString() + '
+';
+  text += 'Food: $' + h.food.toLocaleString() + '
+';
+  text += 'Activities: $' + h.activities.toLocaleString() + '
+';
+  text += 'Transport: $' + h.transport.toLocaleString() + '
+';
+  text += 'Kids Extra: $' + h.kidExtra.toLocaleString() + '
+';
+  text += 'TOTAL: $' + h.total.toLocaleString() + '
+';
+  text += 'Per Person: $' + h.perPerson.toLocaleString() + '
+';
+  text += 'Per Day: $' + h.perDay.toLocaleString() + '
+';
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'family-trip-budget.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetFamily() {
+  document.getElementById('fte-adults').value = 2;
+  document.getElementById('fte-kids').value = 2;
+  document.getElementById('fte-kid-ages').value = '7,10';
+  document.getElementById('fte-days').value = 7;
+  document.getElementById('fte-destination').value = 'city';
+  document.getElementById('fte-style').value = 'diy-hotel';
+  document.getElementById('fte-results').style.display = 'none';
+  document.getElementById('fte-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+renderHistory();
+</script>
+
+</body>
+</html>
