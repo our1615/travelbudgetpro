@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://travelbudgetpro.org/sitemap.xml
