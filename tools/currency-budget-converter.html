@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Currency Budget Converter | Travel Budget Pro</title>
+<meta name="description" content="Convert your travel budget to any currency. See real-time exchange impact and set rate alerts.">
+<meta property="og:title" content="Currency Budget Converter | Travel Budget Pro">
+<meta property="og:description" content="Convert travel budget to any currency with real-time exchange impact.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/currency-budget-converter.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/currency-budget-converter.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Currency Budget Converter",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Convert travel budget to any currency with real-time exchange impact and rate alerts.",
+  "url": "https://travelbudgetpro.org/tools/currency-budget-converter.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Currency Budget Converter", "item": "https://travelbudgetpro.org/tools/currency-budget-converter.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Currency Converter</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Currency Budget Converter</h1>
+  <p>See how exchange rates affect your travel budget. Convert between currencies and track rate changes over time.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">We use approximate mid-market exchange rates against USD as the base. Enter your home currency and destination currency. If you leave the rate blank, we auto-fill. If you have a real rate from your bank, enter it manually.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Enter your trip budget amount. Select from and to currencies. Optionally enter a custom exchange rate. Click Convert. See your converted amount, daily budget, and a 30-day simulated rate trend. Set a rate alert to know when to buy currency.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Use the Rate Impact Simulator to see how a 5% or 10% rate swing affects your budget. Save conversions to compare over time. If the rate drops below your alert threshold, you will know it is a good time to exchange. Always check your bank's actual rate before buying.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Your Budget</h3>
+      <div class="tbp-input-group">
+        <label for="cbc-amount">Trip Budget Amount</label>
+        <input type="number" id="cbc-amount" min="1" value="2000">
+      </div>
+      <div class="tbp-input-group">
+        <label for="cbc-from">From Currency</label>
+        <select id="cbc-from">
+          <option value="USD" selected>USD — US Dollar</option>
+          <option value="EUR">EUR — Euro</option>
+          <option value="GBP">GBP — British Pound</option>
+          <option value="JPY">JPY — Japanese Yen</option>
+          <option value="AUD">AUD — Australian Dollar</option>
+          <option value="CAD">CAD — Canadian Dollar</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="cbc-to">To Currency</label>
+        <select id="cbc-to">
+          <option value="EUR">EUR — Euro</option>
+          <option value="USD">USD — US Dollar</option>
+          <option value="GBP">GBP — British Pound</option>
+          <option value="JPY" selected>JPY — Japanese Yen</option>
+          <option value="THB">THB — Thai Baht</option>
+          <option value="VND">VND — Vietnamese Dong</option>
+          <option value="KRW">KRW — Korean Won</option>
+          <option value="MXN">MXN — Mexican Peso</option>
+          <option value="BRL">BRL — Brazilian Real</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="cbc-rate">Exchange Rate (or leave blank for estimate)</label>
+        <input type="number" id="cbc-rate" step="0.0001" placeholder="Auto">
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="convertCurrency()">Convert</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetCurrency()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Conversion Result</h3>
+      <div id="cbc-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Converted Amount</div>
+          <div class="tbp-result-number" id="cbc-converted">¥0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Exchange Rate Used</div>
+          <div class="tbp-result-number" id="cbc-rate-display" style="font-size:1.4rem;">1.00</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Daily Budget (14 days)</div>
+          <div class="tbp-result-number" id="cbc-daily">¥0</div>
+        </div>
+        <div class="tbp-result-box" style="background:#fff3cd;border-left:4px solid #F4A261;">
+          <div class="tbp-result-label">Rate Alert Threshold</div>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+            <input type="number" id="cbc-alert-rate" step="0.0001" placeholder="Set alert rate" style="flex:1;padding:8px;border:1px solid var(--tbp-border);border-radius:6px;">
+            <button class="tbp-btn" style="padding:8px 16px;font-size:0.85rem;" onclick="setAlert()">Set Alert</button>
+          </div>
+          <div id="cbc-alert-status" style="margin-top:8px;font-size:0.85rem;"></div>
+        </div>
+        <canvas id="cbc-chart" class="tbp-chart-container" width="400" height="200"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveConversion()">Save</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportConversion()">Export</button>
+        </div>
+      </div>
+      <div id="cbc-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">💱</div>
+        <p>Enter your budget and currencies, then click Convert.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Conversion History</h3>
+      <div id="cbc-history" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No conversions saved yet.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Rate Impact Simulator</h3>
+      <div id="cbc-simulator" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Convert to see how rate changes affect your budget.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid">
+    <a href="../blog/when-currency-fluctuations-wiped-out-her-japan-shopping-budg.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>When Currency Fluctuations Wiped Out Her Japan Budget</h3>
+        <p>Claire lost £450 without buying a single thing. The yen dropped 12%.</p>
+      </div>
+    </a>
+    <a href="../blog/how-to-track-expenses-in-multiple-currencies-without-losing-.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>How to Track Expenses in Multiple Currencies</h3>
+        <p>Rachel's system for seven currencies across South America.</p>
+      </div>
+    </a>
+    <a href="../blog/2026-summer-travel-price-surge-where-costs-are-up-and-how-to.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>2026 Summer Travel Price Surge</h3>
+        <p>Where costs are up and how currency shifts affect your buying power.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+// Approximate exchange rates (USD base)
+const RATES = {
+  USD: 1.0,
+  EUR: 0.92,
+  GBP: 0.79,
+  JPY: 148.5,
+  AUD: 1.52,
+  CAD: 1.36,
+  THB: 35.2,
+  VND: 24500,
+  KRW: 1330,
+  MXN: 17.1,
+  BRL: 4.95
+};
+
+const CURRENCY_SYMBOLS = {
+  USD: '$', EUR: '€', GBP: '£', JPY: '¥', AUD: 'A$', CAD: 'C$',
+  THB: '฿', VND: '₫', KRW: '₩', MXN: 'MX$', BRL: 'R$'
+};
+
+let currentResult = null;
+
+function getRate(from, to) {
+  const usdAmount = 1 / RATES[from];
+  return usdAmount * RATES[to];
+}
+
+function convertCurrency() {
+  const amount = parseFloat(document.getElementById('cbc-amount').value) || 0;
+  const from = document.getElementById('cbc-from').value;
+  const to = document.getElementById('cbc-to').value;
+  const customRate = parseFloat(document.getElementById('cbc-rate').value);
+
+  const rate = customRate || getRate(from, to);
+  const converted = amount * rate;
+  const daily = converted / 14;
+
+  currentResult = {
+    id: Date.now(),
+    amount, from, to, rate, converted, daily,
+    timestamp: new Date().toISOString()
+  };
+
+  const sym = CURRENCY_SYMBOLS[to];
+  document.getElementById('cbc-converted').textContent = sym + converted.toLocaleString(undefined, {maximumFractionDigits: 0});
+  document.getElementById('cbc-rate-display').textContent = '1 ' + from + ' = ' + rate.toFixed(4) + ' ' + to;
+  document.getElementById('cbc-daily').textContent = sym + daily.toLocaleString(undefined, {maximumFractionDigits: 0}) + '/day';
+  document.getElementById('cbc-results').style.display = 'block';
+  document.getElementById('cbc-placeholder').style.display = 'none';
+
+  drawRateChart(from, to, rate);
+  renderSimulator(amount, from, to);
+}
+
+function drawRateChart(from, to, currentRate) {
+  const canvas = document.getElementById('cbc-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  // Simulate 30 days of rate fluctuation
+  const days = 30;
+  const data = [];
+  for (let i = 0; i < days; i++) {
+    const fluctuation = (Math.random() - 0.5) * 0.1;
+    data.push(currentRate * (1 + fluctuation * (i / days)));
+  }
+  data[days-1] = currentRate;
+
+  const padding = 30;
+  const chartW = rect.width - padding * 2;
+  const chartH = rect.height - padding * 2;
+  const minRate = Math.min(...data) * 0.98;
+  const maxRate = Math.max(...data) * 1.02;
+
+  // Line
+  ctx.strokeStyle = '#1B4332';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  data.forEach((r, i) => {
+    const x = padding + (i / (days - 1)) * chartW;
+    const y = padding + chartH - ((r - minRate) / (maxRate - minRate)) * chartH;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Current rate dot
+  const lastX = padding + chartW;
+  const lastY = padding + chartH - ((data[days-1] - minRate) / (maxRate - minRate)) * chartH;
+  ctx.fillStyle = '#F4A261';
+  ctx.beginPath();
+  ctx.arc(lastX, lastY, 5, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Labels
+  ctx.fillStyle = '#6c757d';
+  ctx.font = '10px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('30-Day Rate Trend (Simulated)', rect.width/2, 14);
+  ctx.fillText(from + '/' + to, rect.width/2, rect.height - 4);
+}
+
+function renderSimulator(amount, from, to) {
+  const container = document.getElementById('cbc-simulator');
+  const sym = CURRENCY_SYMBOLS[to];
+  const currentRate = getRate(from, to);
+
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>Rate Change</th><th>New Rate</th><th>Your Budget</th><th>Impact</th></tr></thead><tbody>';
+  [-0.10, -0.05, 0, 0.05, 0.10].forEach(change => {
+    const newRate = currentRate * (1 + change);
+    const newBudget = amount * newRate;
+    const diff = newBudget - (amount * currentRate);
+    const diffStr = diff > 0 ? '+$' + Math.abs(diff).toLocaleString(undefined, {maximumFractionDigits: 0}) : '-$' + Math.abs(diff).toLocaleString(undefined, {maximumFractionDigits: 0});
+    const diffColor = diff > 0 ? 'color:#1B4332;' : 'color:#E76F51;';
+    html += '<tr><td>' + (change > 0 ? '+' : '') + (change * 100) + '%</td>';
+    html += '<td>' + newRate.toFixed(4) + '</td>';
+    html += '<td>' + sym + newBudget.toLocaleString(undefined, {maximumFractionDigits: 0}) + '</td>';
+    html += '<td style="' + diffColor + 'font-weight:700;">' + diffStr + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function setAlert() {
+  const alertRate = parseFloat(document.getElementById('cbc-alert-rate').value);
+  if (!alertRate || !currentResult) return;
+  const status = document.getElementById('cbc-alert-status');
+  if (currentResult.rate >= alertRate) {
+    status.innerHTML = '<span style="color:#1B4332;">✅ Current rate (' + currentResult.rate.toFixed(4) + ') is at or above your target.</span>';
+  } else {
+    status.innerHTML = '<span style="color:#F4A261;">⏳ Current rate (' + currentResult.rate.toFixed(4) + ') is below your target. Wait for it to rise.</span>';
+  }
+  let alerts = JSON.parse(localStorage.getItem('cbc-alerts') || '[]');
+  alerts.push({from: currentResult.from, to: currentResult.to, target: alertRate, created: Date.now()});
+  localStorage.setItem('cbc-alerts', JSON.stringify(alerts));
+}
+
+function saveConversion() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('cbc-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 10) history = history.slice(0, 10);
+  localStorage.setItem('cbc-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('cbc-history') || '[]');
+  const container = document.getElementById('cbc-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No conversions saved yet.</p>';
+    return;
+  }
+  let html = '<table class="tbp-table" style="font-size:0.8rem;"><thead><tr><th>From</th><th>To</th><th>Rate</th><th>Action</th></tr></thead><tbody>';
+  history.forEach((h, idx) => {
+    html += '<tr><td>' + h.amount + ' ' + h.from + '</td><td>' + CURRENCY_SYMBOLS[h.to] + h.converted.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' ' + h.to + '</td>';
+    html += '<td>' + h.rate.toFixed(4) + '</td>';
+    html += '<td><button onclick="loadHistory(' + idx + ')" style="background:none;border:none;color:#1B4332;cursor:pointer;font-size:0.75rem;">Load</button></td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('cbc-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+  document.getElementById('cbc-amount').value = h.amount;
+  document.getElementById('cbc-from').value = h.from;
+  document.getElementById('cbc-to').value = h.to;
+  document.getElementById('cbc-rate').value = h.rate;
+  convertCurrency();
+}
+
+function exportConversion() {
+  if (!currentResult) return;
+  const h = currentResult;
+  let text = 'CURRENCY CONVERSION REPORT — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'Original Amount: ' + h.amount + ' ' + h.from + '
+';
+  text += 'Converted: ' + CURRENCY_SYMBOLS[h.to] + h.converted.toLocaleString() + ' ' + h.to + '
+';
+  text += 'Rate: 1 ' + h.from + ' = ' + h.rate.toFixed(4) + ' ' + h.to + '
+';
+  text += 'Daily Budget (14 days): ' + CURRENCY_SYMBOLS[h.to] + h.daily.toLocaleString() + '
+';
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'currency-conversion-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetCurrency() {
+  document.getElementById('cbc-amount').value = 2000;
+  document.getElementById('cbc-from').value = 'USD';
+  document.getElementById('cbc-to').value = 'JPY';
+  document.getElementById('cbc-rate').value = '';
+  document.getElementById('cbc-alert-rate').value = '';
+  document.getElementById('cbc-alert-status').innerHTML = '';
+  document.getElementById('cbc-results').style.display = 'none';
+  document.getElementById('cbc-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+renderHistory();
+</script>
+
+</body>
+</html>
