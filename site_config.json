@@ -1,0 +1,28 @@
+{
+  "site_name": "Travel Budget Pro",
+  "domain": "travelbudgetpro.org",
+  "prefix": "tbp",
+  "author": "Oliver Bennett",
+  "author_title": "Travel Budget Analyst",
+  "author_location": "Brighton, UK",
+  "author_email": "contact@travelbudgetpro.org",
+  "site_description": "Precision travel budgeting tools and real-world cost guides for backpackers, families, digital nomads, and luxury travellers.",
+  "theme_color": "#1B4332",
+  "accent_color": "#F4A261",
+  "secondary_color": "#B7E4C7",
+  "bg_color": "#F8F9FA",
+  "card_bg": "#FFFFFF",
+  "text_color": "#212529",
+  "muted_text": "#6c757d",
+  "border_color": "#e9ecef",
+  "layout": {
+    "index": "G",
+    "tools_index": "B",
+    "blog_index": "C",
+    "post": "D",
+    "tool_detail": "H",
+    "about": "A",
+    "contact": "B",
+    "faq": "A"
+  }
+}
