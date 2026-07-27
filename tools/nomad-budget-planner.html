@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Digital Nomad Budget Planner | Travel Budget Pro</title>
+<meta name="description" content="Compare cost of living across cities for digital nomads. Monthly estimates for accommodation, food, transport, and co-working.">
+<meta property="og:title" content="Digital Nomad Budget Planner | Travel Budget Pro">
+<meta property="og:description" content="Compare cost of living across cities for digital nomads.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/nomad-budget-planner.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/nomad-budget-planner.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Digital Nomad Budget Planner",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Compare cost of living across cities for digital nomads. Monthly estimates for accommodation, food, transport, and co-working.",
+  "url": "https://travelbudgetpro.org/tools/nomad-budget-planner.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Digital Nomad Budget Planner", "item": "https://travelbudgetpro.org/tools/nomad-budget-planner.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Nomad Budget Planner</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Digital Nomad Budget Planner</h1>
+  <p>Compare monthly living costs across nomad hubs. See where your remote-work income goes furthest.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">We use real cost-of-living data for each nomad hub. Monthly costs include rent, food, transport, co-working, insurance, and misc — adjusted by your accommodation style and co-working days.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Enter your monthly income and co-working days. Pick your accommodation style. Select 2-8 cities to compare. Click Compare Cities. The bar chart shows monthly costs. The table shows rent, food, co-work, and savings per city.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Save comparisons to track how your options change. The best-value city is highlighted automatically. If your income is higher than costs, the savings column shows how much you could bank each month. Export the full comparison table.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Your Lifestyle</h3>
+      <div class="tbp-input-group">
+        <label for="nbp-income">Monthly Income (USD)</label>
+        <input type="number" id="nbp-income" min="500" value="4000">
+      </div>
+      <div class="tbp-input-group">
+        <label for="nbp-cowork">Co-Working Days per Month</label>
+        <input type="number" id="nbp-cowork" min="0" max="31" value="15">
+      </div>
+      <div class="tbp-input-group">
+        <label for="nbp-style">Accommodation Style</label>
+        <select id="nbp-style">
+          <option value="studio">Private Studio</option>
+          <option value="room" selected>Private Room in Shared Flat</option>
+          <option value="luxury">Luxury Apartment</option>
+        </select>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Select Cities to Compare</h3>
+      <div id="nbp-city-list" style="display:flex;flex-direction:column;gap:8px;">
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="chiang-mai" checked> Chiang Mai, Thailand</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="lisbon" checked> Lisbon, Portugal</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="medellin"> Medellín, Colombia</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="bali"> Bali (Canggu), Indonesia</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="bangkok"> Bangkok, Thailand</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="barcelona"> Barcelona, Spain</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="mexico-city"> Mexico City, Mexico</label>
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" class="nbp-city-check" value="cape-town"> Cape Town, South Africa</label>
+      </div>
+      <div class="tbp-btn-group" style="margin-top:16px;">
+        <button class="tbp-btn" onclick="compareCities()">Compare Cities</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetNomad()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Comparison Results</h3>
+      <div id="nbp-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Best Value City</div>
+          <div class="tbp-result-number" id="nbp-best">—</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Monthly Savings (Best vs Worst)</div>
+          <div class="tbp-result-number" id="nbp-savings">$0</div>
+        </div>
+        <canvas id="nbp-chart" class="tbp-chart-container" width="400" height="280"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveNomad()">Save Comparison</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportNomad()">Export</button>
+        </div>
+      </div>
+      <div id="nbp-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">💻</div>
+        <p>Select cities and your lifestyle, then click Compare.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Detailed Comparison Table</h3>
+      <div id="nbp-table" style="max-height:400px;overflow:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Calculate to see city-by-city breakdown.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Saved Comparisons</h3>
+      <div id="nbp-history" style="max-height:400px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No saved comparisons yet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid">
+    <a href="../blog/a-digital-nomads-shock-living-in-lisbon-cost-40-less-than-lo.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>A Digital Nomad's Shock: Lisbon Cost 40% Less Than London</h3>
+        <p>Sophie's monthly spending dropped from £3,000 to €1,400.</p>
+      </div>
+    </a>
+    <a href="../blog/digital-nomad-economics-cost-of-living-co-working-and-tax-im.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Digital Nomad Economics: Cost, Co-Working, and Tax</h3>
+        <p>Portugal's NHR scheme, visa rules, and internet reliability.</p>
+      </div>
+    </a>
+    <a href="../blog/using-the-digital-nomad-budget-planner-to-compare-5-cities-s.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Using the Nomad Planner to Compare 5 Cities</h3>
+        <p>Chloe narrowed Lisbon, Barcelona, Chiang Mai, Medellín, and Cape Town.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+// Monthly costs per city (USD) by accommodation style
+const NOMAD_DATA = {
+  "chiang-mai": {
+    name: "Chiang Mai",
+    country: "Thailand",
+    studio: {rent: 400, food: 250, transport: 50, cowork: 100, insurance: 50, misc: 150},
+    room: {rent: 300, food: 250, transport: 50, cowork: 100, insurance: 50, misc: 150},
+    luxury: {rent: 800, food: 400, transport: 80, cowork: 150, insurance: 50, misc: 300}
+  },
+  "lisbon": {
+    name: "Lisbon",
+    country: "Portugal",
+    studio: {rent: 900, food: 400, transport: 50, cowork: 150, insurance: 100, misc: 200},
+    room: {rent: 700, food: 400, transport: 50, cowork: 150, insurance: 100, misc: 200},
+    luxury: {rent: 1500, food: 600, transport: 80, cowork: 200, insurance: 100, misc: 400}
+  },
+  "medellin": {
+    name: "Medellín",
+    country: "Colombia",
+    studio: {rent: 500, food: 250, transport: 40, cowork: 150, insurance: 60, misc: 150},
+    room: {rent: 400, food: 250, transport: 40, cowork: 150, insurance: 60, misc: 150},
+    luxury: {rent: 900, food: 400, transport: 60, cowork: 200, insurance: 60, misc: 300}
+  },
+  "bali": {
+    name: "Bali (Canggu)",
+    country: "Indonesia",
+    studio: {rent: 600, food: 250, transport: 80, cowork: 150, insurance: 50, misc: 170},
+    room: {rent: 450, food: 250, transport: 80, cowork: 150, insurance: 50, misc: 170},
+    luxury: {rent: 1000, food: 400, transport: 100, cowork: 200, insurance: 50, misc: 350}
+  },
+  "bangkok": {
+    name: "Bangkok",
+    country: "Thailand",
+    studio: {rent: 500, food: 300, transport: 60, cowork: 120, insurance: 50, misc: 170},
+    room: {rent: 350, food: 300, transport: 60, cowork: 120, insurance: 50, misc: 170},
+    luxury: {rent: 1000, food: 500, transport: 100, cowork: 200, insurance: 50, misc: 350}
+  },
+  "barcelona": {
+    name: "Barcelona",
+    country: "Spain",
+    studio: {rent: 1000, food: 500, transport: 60, cowork: 200, insurance: 100, misc: 340},
+    room: {rent: 750, food: 500, transport: 60, cowork: 200, insurance: 100, misc: 340},
+    luxury: {rent: 1800, food: 700, transport: 100, cowork: 250, insurance: 100, misc: 500}
+  },
+  "mexico-city": {
+    name: "Mexico City",
+    country: "Mexico",
+    studio: {rent: 600, food: 300, transport: 30, cowork: 150, insurance: 70, misc: 150},
+    room: {rent: 450, food: 300, transport: 30, cowork: 150, insurance: 70, misc: 150},
+    luxury: {rent: 1000, food: 500, transport: 50, cowork: 200, insurance: 70, misc: 300}
+  },
+  "cape-town": {
+    name: "Cape Town",
+    country: "South Africa",
+    studio: {rent: 500, food: 350, transport: 100, cowork: 120, insurance: 70, misc: 260},
+    room: {rent: 400, food: 350, transport: 100, cowork: 120, insurance: 70, misc: 260},
+    luxury: {rent: 900, food: 500, transport: 150, cowork: 180, insurance: 70, misc: 400}
+  }
+};
+
+let currentResult = null;
+
+function compareCities() {
+  const income = parseInt(document.getElementById('nbp-income').value) || 4000;
+  const coworkDays = parseInt(document.getElementById('nbp-cowork').value) || 15;
+  const style = document.getElementById('nbp-style').value;
+
+  const checked = document.querySelectorAll('.nbp-city-check:checked');
+  if (checked.length < 2) { alert('Please select at least 2 cities to compare.'); return; }
+
+  const results = [];
+  checked.forEach(cb => {
+    const cityId = cb.value;
+    const data = NOMAD_DATA[cityId];
+    const costs = data[style];
+    const coworkCost = Math.round(costs.cowork * (coworkDays / 20));
+    const total = costs.rent + costs.food + costs.transport + coworkCost + costs.insurance + costs.misc;
+    const savings = income - total;
+    results.push({
+      id: cityId,
+      name: data.name,
+      country: data.country,
+      rent: costs.rent,
+      food: costs.food,
+      transport: costs.transport,
+      cowork: coworkCost,
+      insurance: costs.insurance,
+      misc: costs.misc,
+      total: total,
+      savings: savings
+    });
+  });
+
+  results.sort((a, b) => a.total - b.total);
+  currentResult = {income, coworkDays, style, cities: results, timestamp: Date.now()};
+
+  const best = results[0];
+  const worst = results[results.length - 1];
+  const savings = worst.total - best.total;
+
+  document.getElementById('nbp-best').textContent = best.name + ' ($' + best.total.toLocaleString() + ')';
+  document.getElementById('nbp-savings').textContent = '$' + savings.toLocaleString();
+  document.getElementById('nbp-results').style.display = 'block';
+  document.getElementById('nbp-placeholder').style.display = 'none';
+
+  drawNomadChart(results);
+  renderNomadTable(results, income);
+}
+
+function drawNomadChart(results) {
+  const canvas = document.getElementById('nbp-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  const padding = 50;
+  const chartW = rect.width - padding * 2;
+  const chartH = rect.height - padding * 2;
+  const maxVal = Math.max(...results.map(r => r.total)) * 1.1;
+  const barW = Math.min(60, chartW / results.length - 8);
+
+  // Grid
+  ctx.strokeStyle = '#e9ecef';
+  for (let i = 0; i <= 4; i++) {
+    const y = padding + chartH * (i / 4);
+    ctx.beginPath();
+    ctx.moveTo(padding, y);
+    ctx.lineTo(padding + chartW, y);
+    ctx.stroke();
+    ctx.fillStyle = '#6c757d';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('$' + Math.round(maxVal * (1 - i/4)/1000) + 'k', padding - 6, y + 3);
+  }
+
+  // Bars
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7', '#E76F51', '#6c757d', '#2a9d8f', '#e9c46a', '#f4a261'];
+  results.forEach((r, i) => {
+    const h = (r.total / maxVal) * chartH;
+    const x = padding + i * (chartW / results.length) + (chartW / results.length - barW) / 2;
+    const y = padding + chartH - h;
+    ctx.fillStyle = colors[i % colors.length];
+    ctx.fillRect(x, y, barW, h);
+    ctx.fillStyle = '#212529';
+    ctx.font = 'bold 10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('$' + (r.total/1000).toFixed(1) + 'k', x + barW/2, y - 6);
+    ctx.font = '10px sans-serif';
+    ctx.fillText(r.name, x + barW/2, padding + chartH + 14);
+  });
+
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Monthly Cost by City (USD)', rect.width/2, 16);
+}
+
+function renderNomadTable(results, income) {
+  const container = document.getElementById('nbp-table');
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>City</th><th>Total</th><th>Rent</th><th>Food</th><th>Co-Work</th><th>Savings</th></tr></thead><tbody>';
+  results.forEach(r => {
+    const savingsColor = r.savings > 0 ? 'color:#1B4332;' : 'color:#E76F51;';
+    html += '<tr><td><strong>' + r.name + '</strong></td>';
+    html += '<td>$' + r.total.toLocaleString() + '</td>';
+    html += '<td>$' + r.rent.toLocaleString() + '</td>';
+    html += '<td>$' + r.food.toLocaleString() + '</td>';
+    html += '<td>$' + r.cowork.toLocaleString() + '</td>';
+    html += '<td style="' + savingsColor + 'font-weight:700;">' + (r.savings > 0 ? '+$' : '-$') + Math.abs(r.savings).toLocaleString() + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function saveNomad() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('nbp-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 5) history = history.slice(0, 5);
+  localStorage.setItem('nbp-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('nbp-history') || '[]');
+  const container = document.getElementById('nbp-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No saved comparisons yet.</p>';
+    return;
+  }
+  let html = '';
+  history.forEach((h, idx) => {
+    const best = h.cities[0];
+    html += '<div style="background:var(--tbp-bg);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="loadHistory(' + idx + ')">';
+    html += '<div style="font-weight:700;font-size:0.9rem;">' + h.cities.length + ' cities compared</div>';
+    html += '<div style="font-size:0.8rem;color:var(--tbp-muted);">Best: ' + best.name + ' ($' + best.total.toLocaleString() + ') · Income: $' + h.income.toLocaleString() + '</div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('nbp-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+  document.getElementById('nbp-income').value = h.income;
+  document.getElementById('nbp-cowork').value = h.coworkDays;
+  document.getElementById('nbp-style').value = h.style;
+  document.querySelectorAll('.nbp-city-check').forEach(cb => {
+    cb.checked = h.cities.some(c => c.id === cb.value);
+  });
+  currentResult = h;
+  document.getElementById('nbp-best').textContent = h.cities[0].name + ' ($' + h.cities[0].total.toLocaleString() + ')';
+  document.getElementById('nbp-savings').textContent = '$' + (h.cities[h.cities.length-1].total - h.cities[0].total).toLocaleString();
+  document.getElementById('nbp-results').style.display = 'block';
+  document.getElementById('nbp-placeholder').style.display = 'none';
+  drawNomadChart(h.cities);
+  renderNomadTable(h.cities, h.income);
+}
+
+function exportNomad() {
+  if (!currentResult) return;
+  const h = currentResult;
+  let text = 'DIGITAL NOMAD BUDGET COMPARISON — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'Monthly Income: $' + h.income.toLocaleString() + '
+';
+  text += 'Co-Working Days: ' + h.coworkDays + '/month
+';
+  text += 'Accommodation: ' + h.style + '
+
+';
+  text += 'CITY COMPARISON
+';
+  text += 'City,Total,Rent,Food,Transport,Co-Work,Insurance,Misc,Savings
+';
+  h.cities.forEach(c => {
+    text += c.name + ',' + c.total + ',' + c.rent + ',' + c.food + ',' + c.transport + ',' + c.cowork + ',' + c.insurance + ',' + c.misc + ',' + c.savings + '
+';
+  });
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'nomad-budget-comparison.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetNomad() {
+  document.getElementById('nbp-income').value = 4000;
+  document.getElementById('nbp-cowork').value = 15;
+  document.getElementById('nbp-style').value = 'room';
+  document.querySelectorAll('.nbp-city-check').forEach(cb => {
+    cb.checked = ['chiang-mai', 'lisbon'].includes(cb.value);
+  });
+  document.getElementById('nbp-results').style.display = 'none';
+  document.getElementById('nbp-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+renderHistory();
+</script>
+
+</body>
+</html>
