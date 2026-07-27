@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Trip Cost Estimator | Travel Budget Pro</title>
+<meta name="description" content="Track your daily travel spending by category. See projected totals and compare to your budget in real time.">
+<meta property="og:title" content="Trip Cost Estimator | Travel Budget Pro">
+<meta property="og:description" content="Track daily travel spending by category. Compare to your budget in real time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/trip-cost-estimator.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/trip-cost-estimator.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Trip Cost Estimator",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Track daily travel spending by category and compare to your budget in real time.",
+  "url": "https://travelbudgetpro.org/tools/trip-cost-estimator.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Trip Cost Estimator", "item": "https://travelbudgetpro.org/tools/trip-cost-estimator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Trip Cost Estimator</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Trip Cost Estimator</h1>
+  <p>Log your daily spending by category. Watch your running total and see if you are on track — or heading for trouble.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Set your total budget and trip length. Log daily spending by category. We calculate your running total, remaining budget, and project your final cost based on average daily spend so far.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Enter your total budget and days. Each day, log what you spent on food, accommodation, transport, activities, and misc. The bar chart shows daily spending vs your target. The status tells you if you are on track.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Data saves automatically in your browser. You can delete individual days or clear everything. Export a full report with daily breakdowns before your trip ends. The projected cost updates every time you log a day.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Set Your Budget</h3>
+      <div class="tbp-input-group">
+        <label for="tce-total-budget">Total Trip Budget ($)</label>
+        <input type="number" id="tce-total-budget" min="1" value="2000">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tce-trip-days">Trip Length (days)</label>
+        <input type="number" id="tce-trip-days" min="1" value="14">
+      </div>
+      <div class="tbp-result-box" style="margin-top:16px;">
+        <div class="tbp-result-label">Daily Budget Target</div>
+        <div class="tbp-result-number" id="tce-daily-target">$143</div>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Log Today's Spending</h3>
+      <div class="tbp-input-group">
+        <label for="tce-day">Day Number</label>
+        <input type="number" id="tce-day" min="1" value="1">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tce-food">Food ($)</label>
+        <input type="number" id="tce-food" min="0" value="0">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tce-accommodation">Accommodation ($)</label>
+        <input type="number" id="tce-accommodation" min="0" value="0">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tce-transport">Transport ($)</label>
+        <input type="number" id="tce-transport" min="0" value="0">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tce-activities">Activities ($)</label>
+        <input type="number" id="tce-activities" min="0" value="0">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tce-misc">Miscellaneous ($)</label>
+        <input type="number" id="tce-misc" min="0" value="0">
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="logDay()">Log Day</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetEstimator()">Reset All</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Running Totals</h3>
+      <div class="tbp-result-box">
+        <div class="tbp-result-label">Total Spent So Far</div>
+        <div class="tbp-result-number" id="tce-total-spent">$0</div>
+      </div>
+      <div class="tbp-result-box">
+        <div class="tbp-result-label">Budget Remaining</div>
+        <div class="tbp-result-number" id="tce-remaining" style="color:var(--tbp-primary);">$2,000</div>
+      </div>
+      <div class="tbp-result-box">
+        <div class="tbp-result-label">Projected Final Cost</div>
+        <div class="tbp-result-number" id="tce-projected">$2,000</div>
+      </div>
+      <div class="tbp-result-box">
+        <div class="tbp-result-label">Status</div>
+        <div id="tce-status" style="font-weight:700;color:var(--tbp-primary);">On Track ✅</div>
+      </div>
+      <canvas id="tce-chart" class="tbp-chart-container" width="400" height="250"></canvas>
+      <div class="tbp-btn-group" style="margin-top:12px;">
+        <button class="tbp-btn tbp-btn-secondary" onclick="exportEstimator()">Export Report</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="clearHistory()">Clear History</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Daily Log</h3>
+      <div id="tce-log" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No entries yet. Log your first day above.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Category Breakdown</h3>
+      <div id="tce-categories" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Log spending to see category breakdown.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid" id="tce-related">
+    <a href="../blog/how-to-build-a-travel-budget-from-scratch-in-20-minutes.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>How to Build a Travel Budget from Scratch in 20 Minutes</h3>
+        <p>Set your target, then track daily spending to stay on course.</p>
+      </div>
+    </a>
+    <a href="../blog/the-couple-who-tracked-every-penny-on-a-3-month-road-trip-ac.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>The Couple Who Tracked Every Penny on a 3-Month Road Trip</h3>
+        <p>Matt and Rachel's 1,247-row spreadsheet saved their budget.</p>
+      </div>
+    </a>
+    <a href="../blog/how-to-track-expenses-in-multiple-currencies-without-losing-.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>How to Track Expenses in Multiple Currencies</h3>
+        <p>Rachel's system for seven currencies across South America.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+let logData = JSON.parse(localStorage.getItem('tce-log') || '[]');
+let totalBudget = parseInt(localStorage.getItem('tce-budget') || '2000');
+let tripDays = parseInt(localStorage.getItem('tce-days') || '14');
+
+document.getElementById('tce-total-budget').value = totalBudget;
+document.getElementById('tce-trip-days').value = tripDays;
+
+function updateTarget() {
+  totalBudget = parseInt(document.getElementById('tce-total-budget').value) || 2000;
+  tripDays = parseInt(document.getElementById('tce-trip-days').value) || 14;
+  localStorage.setItem('tce-budget', totalBudget);
+  localStorage.setItem('tce-days', tripDays);
+  const daily = Math.round(totalBudget / tripDays);
+  document.getElementById('tce-daily-target').textContent = '$' + daily.toLocaleString();
+  updateDisplay();
+}
+
+document.getElementById('tce-total-budget').addEventListener('change', updateTarget);
+document.getElementById('tce-trip-days').addEventListener('change', updateTarget);
+
+function logDay() {
+  const day = parseInt(document.getElementById('tce-day').value) || 1;
+  const food = parseInt(document.getElementById('tce-food').value) || 0;
+  const accommodation = parseInt(document.getElementById('tce-accommodation').value) || 0;
+  const transport = parseInt(document.getElementById('tce-transport').value) || 0;
+  const activities = parseInt(document.getElementById('tce-activities').value) || 0;
+  const misc = parseInt(document.getElementById('tce-misc').value) || 0;
+  const total = food + accommodation + transport + activities + misc;
+
+  // Remove existing entry for same day
+  logData = logData.filter(e => e.day !== day);
+  logData.push({day, food, accommodation, transport, activities, misc, total});
+  logData.sort((a,b) => a.day - b.day);
+
+  localStorage.setItem('tce-log', JSON.stringify(logData));
+
+  // Advance day number
+  document.getElementById('tce-day').value = day + 1;
+  // Clear inputs
+  document.getElementById('tce-food').value = 0;
+  document.getElementById('tce-accommodation').value = 0;
+  document.getElementById('tce-transport').value = 0;
+  document.getElementById('tce-activities').value = 0;
+  document.getElementById('tce-misc').value = 0;
+
+  updateDisplay();
+}
+
+function updateDisplay() {
+  const totalSpent = logData.reduce((sum, e) => sum + e.total, 0);
+  const remaining = totalBudget - totalSpent;
+  const daysLogged = logData.length;
+  const avgDaily = daysLogged > 0 ? totalSpent / daysLogged : 0;
+  const projected = avgDaily * tripDays;
+
+  document.getElementById('tce-total-spent').textContent = '$' + totalSpent.toLocaleString();
+  document.getElementById('tce-remaining').textContent = '$' + remaining.toLocaleString();
+  document.getElementById('tce-remaining').style.color = remaining < 0 ? '#E76F51' : '#1B4332';
+  document.getElementById('tce-projected').textContent = '$' + Math.round(projected).toLocaleString();
+  document.getElementById('tce-projected').style.color = projected > totalBudget ? '#E76F51' : '#1B4332';
+
+  const statusEl = document.getElementById('tce-status');
+  if (projected > totalBudget * 1.1) {
+    statusEl.textContent = 'Over Budget ⚠️';
+    statusEl.style.color = '#E76F51';
+  } else if (projected > totalBudget) {
+    statusEl.textContent = 'Tight 📉';
+    statusEl.style.color = '#F4A261';
+  } else {
+    statusEl.textContent = 'On Track ✅';
+    statusEl.style.color = '#1B4332';
+  }
+
+  renderLog();
+  renderCategories();
+  drawChart();
+}
+
+function renderLog() {
+  const container = document.getElementById('tce-log');
+  if (logData.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No entries yet.</p>';
+    return;
+  }
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>Day</th><th>Total</th><th>Action</th></tr></thead><tbody>';
+  logData.forEach(e => {
+    html += '<tr><td>Day ' + e.day + '</td><td>$' + e.total.toLocaleString() + '</td>';
+    html += '<td><button onclick="deleteDay(' + e.day + ')" style="background:none;border:none;color:#E76F51;cursor:pointer;font-size:0.8rem;">Delete</button></td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function deleteDay(day) {
+  logData = logData.filter(e => e.day !== day);
+  localStorage.setItem('tce-log', JSON.stringify(logData));
+  updateDisplay();
+}
+
+function renderCategories() {
+  const container = document.getElementById('tce-categories');
+  if (logData.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">Log spending to see breakdown.</p>';
+    return;
+  }
+  const cats = {food:0, accommodation:0, transport:0, activities:0, misc:0};
+  logData.forEach(e => {
+    cats.food += e.food;
+    cats.accommodation += e.accommodation;
+    cats.transport += e.transport;
+    cats.activities += e.activities;
+    cats.misc += e.misc;
+  });
+  const total = Object.values(cats).reduce((a,b) => a+b, 0);
+  const labels = {food:'Food', accommodation:'Accommodation', transport:'Transport', activities:'Activities', misc:'Misc'};
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7', '#E76F51', '#6c757d'];
+
+  let html = '<div style="display:flex;flex-direction:column;gap:8px;">';
+  let i = 0;
+  for (let k in cats) {
+    const pct = total > 0 ? Math.round(cats[k]/total*100) : 0;
+    html += '<div style="display:flex;align-items:center;gap:8px;">';
+    html += '<div style="width:12px;height:12px;border-radius:2px;background:' + colors[i] + ';"></div>';
+    html += '<div style="flex:1;font-size:0.9rem;">' + labels[k] + '</div>';
+    html += '<div style="font-weight:700;">$' + cats[k].toLocaleString() + '</div>';
+    html += '<div style="font-size:0.8rem;color:var(--tbp-muted);width:40px;text-align:right;">' + pct + '%</div>';
+    html += '</div>';
+    html += '<div style="height:4px;background:var(--tbp-border);border-radius:2px;overflow:hidden;">';
+    html += '<div style="height:100%;width:' + pct + '%;background:' + colors[i] + ';"></div></div>';
+    i++;
+  }
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function drawChart() {
+  const canvas = document.getElementById('tce-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  if (logData.length === 0) return;
+
+  const padding = 40;
+  const chartW = rect.width - padding * 2;
+  const chartH = rect.height - padding * 2;
+  const maxVal = Math.max(...logData.map(e => e.total), totalBudget / tripDays);
+  const barW = Math.min(40, chartW / logData.length - 4);
+
+  // Grid lines
+  ctx.strokeStyle = '#e9ecef';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const y = padding + chartH * (i / 4);
+    ctx.beginPath();
+    ctx.moveTo(padding, y);
+    ctx.lineTo(padding + chartW, y);
+    ctx.stroke();
+    ctx.fillStyle = '#6c757d';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('$' + Math.round(maxVal * (1 - i/4)).toLocaleString(), padding - 6, y + 3);
+  }
+
+  // Target line
+  const targetY = padding + chartH * (1 - (totalBudget/tripDays) / maxVal);
+  ctx.strokeStyle = '#E76F51';
+  ctx.setLineDash([4, 4]);
+  ctx.beginPath();
+  ctx.moveTo(padding, targetY);
+  ctx.lineTo(padding + chartW, targetY);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#E76F51';
+  ctx.font = '10px sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('Target', padding + 4, targetY - 4);
+
+  // Bars
+  logData.forEach((e, i) => {
+    const h = (e.total / maxVal) * chartH;
+    const x = padding + i * (chartW / logData.length) + (chartW / logData.length - barW) / 2;
+    const y = padding + chartH - h;
+    ctx.fillStyle = e.total > (totalBudget/tripDays) ? '#E76F51' : '#1B4332';
+    ctx.fillRect(x, y, barW, h);
+    ctx.fillStyle = '#212529';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('D' + e.day, x + barW/2, padding + chartH + 14);
+  });
+
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 12px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Daily Spending vs Target', rect.width/2, 16);
+}
+
+function resetEstimator() {
+  document.getElementById('tce-total-budget').value = 2000;
+  document.getElementById('tce-trip-days').value = 14;
+  document.getElementById('tce-day').value = 1;
+  document.getElementById('tce-food').value = 0;
+  document.getElementById('tce-accommodation').value = 0;
+  document.getElementById('tce-transport').value = 0;
+  document.getElementById('tce-activities').value = 0;
+  document.getElementById('tce-misc').value = 0;
+  logData = [];
+  localStorage.removeItem('tce-log');
+  updateTarget();
+}
+
+function clearHistory() {
+  logData = [];
+  localStorage.removeItem('tce-log');
+  updateDisplay();
+}
+
+function exportEstimator() {
+  if (logData.length === 0) { alert('No data to export.'); return; }
+  const totalSpent = logData.reduce((sum, e) => sum + e.total, 0);
+  const remaining = totalBudget - totalSpent;
+  const avgDaily = totalSpent / logData.length;
+  const projected = avgDaily * tripDays;
+
+  let text = 'TRIP COST ESTIMATOR REPORT — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'BUDGET SUMMARY
+';
+  text += 'Total Budget: $' + totalBudget.toLocaleString() + '
+';
+  text += 'Trip Length: ' + tripDays + ' days
+';
+  text += 'Daily Target: $' + Math.round(totalBudget/tripDays).toLocaleString() + '
+
+';
+  text += 'SPENDING SUMMARY
+';
+  text += 'Days Logged: ' + logData.length + '
+';
+  text += 'Total Spent: $' + totalSpent.toLocaleString() + '
+';
+  text += 'Remaining: $' + remaining.toLocaleString() + '
+';
+  text += 'Avg Daily: $' + Math.round(avgDaily).toLocaleString() + '
+';
+  text += 'Projected Final: $' + Math.round(projected).toLocaleString() + '
+
+';
+  text += 'DAILY LOG
+';
+  text += 'Day,Food,Accommodation,Transport,Activities,Misc,Total
+';
+  logData.forEach(e => {
+    text += e.day + ',' + e.food + ',' + e.accommodation + ',' + e.transport + ',' + e.activities + ',' + e.misc + ',' + e.total + '
+';
+  });
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'trip-cost-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Init
+updateTarget();
+</script>
+
+</body>
+</html>
