@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Road Trip Budget Calculator | Travel Budget Pro</title>
+<meta name="description" content="Plan your road trip budget: fuel, campsites, motels, national parks, and daily spending. Perfect for US, Europe, and Australia road trips.">
+<meta property="og:title" content="Road Trip Budget Calculator | Travel Budget Pro">
+<meta property="og:description" content="Fuel, campsites, motels, national parks. Plan your road trip budget with precision.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/road-trip-budget-calculator.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/road-trip-budget-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Road Trip Budget Calculator",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Road trip budget calculator for fuel, campsites, motels, national parks, and daily spending.",
+  "url": "https://travelbudgetpro.org/tools/road-trip-budget-calculator.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Road Trip Budget Calculator", "item": "https://travelbudgetpro.org/tools/road-trip-budget-calculator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Road Trip Budget</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Road Trip Budget Calculator</h1>
+  <p>Fuel, campsites, motels, national parks, and roadside snacks. Know exactly what your road trip will cost before you turn the key.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Fuel = distance ÷ MPG × price per gallon. Accommodation = camping nights × camp rate + motel nights × motel rate. Food = daily budget × travellers × days. National parks = $80 annual pass if 3+ parks, else $35 each. A 10% buffer is added for emergencies.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Enter total distance and unit (miles or km). Input your vehicle's MPG and fuel price. Add trip length, travellers, and accommodation mix. Click Calculate. The pie chart shows fuel, accommodation, food, parks, and buffer. Save routes to compare different trips.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Save at least 2 routes to use the Compare feature. Camping more nights always lowers cost. The buffer percentage is adjustable — increase it for older vehicles or remote routes. Export your full route report with cost breakdown before you leave.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Vehicle & Route</h3>
+      <div class="tbp-input-group">
+        <label for="rtb-miles">Total Miles / Kilometres</label>
+        <input type="number" id="rtb-miles" min="1" value="3000">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-unit">Distance Unit</label>
+        <select id="rtb-unit">
+          <option value="miles" selected>Miles</option>
+          <option value="km">Kilometres</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-mpg">Fuel Efficiency (MPG or L/100km)</label>
+        <input type="number" id="rtb-mpg" step="0.1" value="25">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-fuel-price">Fuel Price per Gallon / Litre ($)</label>
+        <input type="number" id="rtb-fuel-price" step="0.01" value="3.50">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-days">Trip Length (days)</label>
+        <input type="number" id="rtb-days" min="1" value="14">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-travellers">Travellers</label>
+        <input type="number" id="rtb-travellers" min="1" value="2">
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Accommodation Mix</h3>
+      <div class="tbp-input-group">
+        <label for="rtb-camp-nights">Camping Nights</label>
+        <input type="number" id="rtb-camp-nights" min="0" value="7">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-motel-nights">Motel / Hotel Nights</label>
+        <input type="number" id="rtb-motel-nights" min="0" value="5">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-friend-nights">Free Nights (friends/family)</label>
+        <input type="number" id="rtb-friend-nights" min="0" value="2">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-motel-price">Avg Motel Price per Night ($)</label>
+        <input type="number" id="rtb-motel-price" min="0" value="80">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-camp-price">Avg Campsite Price per Night ($)</label>
+        <input type="number" id="rtb-camp-price" min="0" value="25">
+      </div>
+      <hr style="border:none;border-top:1px solid var(--tbp-border);margin:24px 0;">
+      <h3>Extras</h3>
+      <div class="tbp-input-group">
+        <label for="rtb-national-parks">National Parks Visiting</label>
+        <input type="number" id="rtb-national-parks" min="0" value="3">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-food">Daily Food Budget per Person ($)</label>
+        <input type="number" id="rtb-food" min="0" value="35">
+      </div>
+      <div class="tbp-input-group">
+        <label for="rtb-buffer">Emergency Buffer (%)</label>
+        <input type="number" id="rtb-buffer" min="0" max="50" value="10">
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="calculateRoadTrip()">Calculate</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetRoadTrip()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Road Trip Budget</h3>
+      <div id="rtb-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Total Trip Cost</div>
+          <div class="tbp-result-number" id="rtb-total">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Fuel Cost</div>
+          <div class="tbp-result-number" id="rtb-fuel" style="font-size:1.4rem;">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Accommodation</div>
+          <div class="tbp-result-number" id="rtb-accommodation" style="font-size:1.4rem;">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Food</div>
+          <div class="tbp-result-number" id="rtb-food-total" style="font-size:1.4rem;">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Per Day</div>
+          <div class="tbp-result-number" id="rtb-perday" style="font-size:1.4rem;">$0</div>
+        </div>
+        <canvas id="rtb-chart" class="tbp-chart-container" width="400" height="250"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveRoadTrip()">Save Route</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportRoadTrip()">Export</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="compareRoadTrips()">Compare</button>
+        </div>
+      </div>
+      <div id="rtb-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">🚗</div>
+        <p>Enter your route details and click Calculate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Saved Routes</h3>
+      <div id="rtb-history" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No saved routes yet.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Route Comparison</h3>
+      <div id="rtb-compare" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Save at least 2 routes to compare.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid">
+    <a href="../blog/the-couple-who-tracked-every-penny-on-a-3-month-road-trip-ac.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>The Couple Who Tracked Every Penny on a 3-Month Road Trip</h3>
+        <p>Matt and Rachel's 12,000-mile spreadsheet across 22 US states.</p>
+      </div>
+    </a>
+    <a href="../blog/how-to-build-a-travel-budget-from-scratch-in-20-minutes.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Build a Travel Budget from Scratch</h3>
+        <p>20-minute budget framework for any trip type.</p>
+      </div>
+    </a>
+    <a href="../blog/the-real-cost-of-travel-by-region-a-data-driven-breakdown-fo.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Real Cost of Travel by Region</h3>
+        <p>North America road trip: $80-160/day depending on camping ratio.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+let currentResult = null;
+
+function calculateRoadTrip() {
+  let miles = parseFloat(document.getElementById('rtb-miles').value) || 0;
+  const unit = document.getElementById('rtb-unit').value;
+  const mpg = parseFloat(document.getElementById('rtb-mpg').value) || 25;
+  const fuelPrice = parseFloat(document.getElementById('rtb-fuel-price').value) || 3.50;
+  const days = parseInt(document.getElementById('rtb-days').value) || 14;
+  const travellers = parseInt(document.getElementById('rtb-travellers').value) || 2;
+  const campNights = parseInt(document.getElementById('rtb-camp-nights').value) || 0;
+  const motelNights = parseInt(document.getElementById('rtb-motel-nights').value) || 0;
+  const friendNights = parseInt(document.getElementById('rtb-friend-nights').value) || 0;
+  const motelPrice = parseFloat(document.getElementById('rtb-motel-price').value) || 80;
+  const campPrice = parseFloat(document.getElementById('rtb-camp-price').value) || 25;
+  const nationalParks = parseInt(document.getElementById('rtb-national-parks').value) || 0;
+  const foodDaily = parseFloat(document.getElementById('rtb-food').value) || 35;
+  const bufferPct = parseFloat(document.getElementById('rtb-buffer').value) || 10;
+
+  // Convert km to miles if needed (1 km = 0.621371 miles)
+  if (unit === 'km') miles = miles * 0.621371;
+
+  // Fuel calculation: miles / mpg * price
+  const fuelCost = (miles / mpg) * fuelPrice;
+
+  // Accommodation
+  const campCost = campNights * campPrice;
+  const motelCost = motelNights * motelPrice;
+  const accommodationTotal = campCost + motelCost;
+
+  // National Parks: America the Beautiful pass $80/year vs individual $30-35 each
+  const parkCost = nationalParks >= 3 ? 80 : nationalParks * 35;
+
+  // Food
+  const foodTotal = foodDaily * travellers * days;
+
+  // Misc: ice, laundry, tolls, repairs buffer
+  const misc = 5 * days + (miles > 2000 ? 200 : 100);
+
+  const subtotal = fuelCost + accommodationTotal + parkCost + foodTotal + misc;
+  const buffer = subtotal * (bufferPct / 100);
+  const total = subtotal + buffer;
+
+  currentResult = {
+    id: Date.now(),
+    miles: miles, unit: unit, mpg: mpg, fuelPrice: fuelPrice,
+    days, travellers, campNights, motelNights, friendNights,
+    motelPrice, campPrice, nationalParks, foodDaily, bufferPct,
+    fuelCost, accommodationTotal, campCost, motelCost,
+    parkCost, foodTotal, misc, buffer, total,
+    perDay: Math.round(total / days)
+  };
+
+  document.getElementById('rtb-total').textContent = '$' + total.toLocaleString(undefined, {maximumFractionDigits: 0});
+  document.getElementById('rtb-fuel').textContent = '$' + fuelCost.toLocaleString(undefined, {maximumFractionDigits: 0});
+  document.getElementById('rtb-accommodation').textContent = '$' + accommodationTotal.toLocaleString(undefined, {maximumFractionDigits: 0});
+  document.getElementById('rtb-food-total').textContent = '$' + foodTotal.toLocaleString(undefined, {maximumFractionDigits: 0});
+  document.getElementById('rtb-perday').textContent = '$' + currentResult.perDay.toLocaleString();
+  document.getElementById('rtb-results').style.display = 'block';
+  document.getElementById('rtb-placeholder').style.display = 'none';
+
+  drawRoadChart(currentResult);
+}
+
+function drawRoadChart(r) {
+  const canvas = document.getElementById('rtb-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  const cats = ['Fuel', 'Accommodation', 'Food', 'National Parks', 'Misc', 'Buffer'];
+  const values = [r.fuelCost, r.accommodationTotal, r.foodTotal, r.parkCost, r.misc, r.buffer];
+  const total = r.total;
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7', '#E76F51', '#6c757d', '#2a9d8f'];
+
+  const cx = rect.width / 2;
+  const cy = rect.height / 2;
+  const radius = Math.min(cx, cy) - 50;
+
+  let start = -Math.PI / 2;
+  values.forEach((v, i) => {
+    const angle = (v / total) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, radius, start, start + angle);
+    ctx.closePath();
+    ctx.fillStyle = colors[i];
+    ctx.fill();
+    start += angle;
+  });
+
+  let ly = 10;
+  cats.forEach((l, i) => {
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(8, ly, 10, 10);
+    ctx.fillStyle = '#212529';
+    ctx.font = '11px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(l + ' $' + Math.round(values[i]).toLocaleString(), 22, ly + 9);
+    ly += 18;
+  });
+
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Total: $' + Math.round(total).toLocaleString(), cx, cy + 4);
+}
+
+function saveRoadTrip() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('rtb-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 5) history = history.slice(0, 5);
+  localStorage.setItem('rtb-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('rtb-history') || '[]');
+  const container = document.getElementById('rtb-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No saved routes yet.</p>';
+    return;
+  }
+  let html = '';
+  history.forEach((h, idx) => {
+    const dist = Math.round(h.unit === 'km' ? h.miles / 0.621371 : h.miles);
+    const unitLabel = h.unit === 'km' ? 'km' : 'mi';
+    html += '<div style="background:var(--tbp-bg);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="loadHistory(' + idx + ')">';
+    html += '<div style="font-weight:700;font-size:0.9rem;">' + dist.toLocaleString() + ' ' + unitLabel + ' · ' + h.days + ' days</div>';
+    html += '<div style="font-size:0.8rem;color:var(--tbp-muted);">Total: $' + Math.round(h.total).toLocaleString() + ' · $' + h.perDay + '/day</div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('rtb-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+  document.getElementById('rtb-miles').value = Math.round(h.unit === 'km' ? h.miles / 0.621371 : h.miles);
+  document.getElementById('rtb-unit').value = h.unit;
+  document.getElementById('rtb-mpg').value = h.mpg;
+  document.getElementById('rtb-fuel-price').value = h.fuelPrice;
+  document.getElementById('rtb-days').value = h.days;
+  document.getElementById('rtb-travellers').value = h.travellers;
+  document.getElementById('rtb-camp-nights').value = h.campNights;
+  document.getElementById('rtb-motel-nights').value = h.motelNights;
+  document.getElementById('rtb-friend-nights').value = h.friendNights;
+  document.getElementById('rtb-motel-price').value = h.motelPrice;
+  document.getElementById('rtb-camp-price').value = h.campPrice;
+  document.getElementById('rtb-national-parks').value = h.nationalParks;
+  document.getElementById('rtb-food').value = h.foodDaily;
+  document.getElementById('rtb-buffer').value = h.bufferPct;
+  currentResult = h;
+  document.getElementById('rtb-total').textContent = '$' + Math.round(h.total).toLocaleString();
+  document.getElementById('rtb-fuel').textContent = '$' + Math.round(h.fuelCost).toLocaleString();
+  document.getElementById('rtb-accommodation').textContent = '$' + Math.round(h.accommodationTotal).toLocaleString();
+  document.getElementById('rtb-food-total').textContent = '$' + Math.round(h.foodTotal).toLocaleString();
+  document.getElementById('rtb-perday').textContent = '$' + h.perDay.toLocaleString();
+  document.getElementById('rtb-results').style.display = 'block';
+  document.getElementById('rtb-placeholder').style.display = 'none';
+  drawRoadChart(h);
+}
+
+function compareRoadTrips() {
+  const history = JSON.parse(localStorage.getItem('rtb-history') || '[]');
+  if (history.length < 2) { alert('Save at least 2 routes to compare.'); return; }
+  const container = document.getElementById('rtb-compare');
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>Route</th><th>Distance</th><th>Days</th><th>Total</th><th>$/Day</th></tr></thead><tbody>';
+  history.slice(0, 5).forEach((h, i) => {
+    const dist = Math.round(h.unit === 'km' ? h.miles / 0.621371 : h.miles);
+    const unitLabel = h.unit === 'km' ? 'km' : 'mi';
+    html += '<tr><td>Route ' + (i + 1) + '</td><td>' + dist.toLocaleString() + ' ' + unitLabel + '</td>';
+    html += '<td>' + h.days + '</td><td>$' + Math.round(h.total).toLocaleString() + '</td>';
+    html += '<td>$' + h.perDay + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function exportRoadTrip() {
+  if (!currentResult) return;
+  const h = currentResult;
+  const dist = Math.round(h.unit === 'km' ? h.miles / 0.621371 : h.miles);
+  const unitLabel = h.unit === 'km' ? 'km' : 'miles';
+  let text = 'ROAD TRIP BUDGET REPORT — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'Route: ' + dist.toLocaleString() + ' ' + unitLabel + '
+';
+  text += 'Duration: ' + h.days + ' days
+';
+  text += 'Travellers: ' + h.travellers + '
+';
+  text += 'Vehicle: ' + h.mpg + ' MPG / ' + h.fuelPrice + ' per gallon
+
+';
+  text += 'COST BREAKDOWN
+';
+  text += 'Fuel: $' + Math.round(h.fuelCost).toLocaleString() + '
+';
+  text += 'Accommodation: $' + Math.round(h.accommodationTotal).toLocaleString() + ' (' + h.campNights + ' camp + ' + h.motelNights + ' motel nights)
+';
+  text += 'Food: $' + Math.round(h.foodTotal).toLocaleString() + '
+';
+  text += 'National Parks: $' + Math.round(h.parkCost).toLocaleString() + '
+';
+  text += 'Misc: $' + Math.round(h.misc).toLocaleString() + '
+';
+  text += 'Buffer (' + h.bufferPct + '%): $' + Math.round(h.buffer).toLocaleString() + '
+';
+  text += 'TOTAL: $' + Math.round(h.total).toLocaleString() + '
+';
+  text += 'Per Day: $' + h.perDay + '
+';
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'road-trip-budget.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetRoadTrip() {
+  document.getElementById('rtb-miles').value = 3000;
+  document.getElementById('rtb-unit').value = 'miles';
+  document.getElementById('rtb-mpg').value = 25;
+  document.getElementById('rtb-fuel-price').value = 3.50;
+  document.getElementById('rtb-days').value = 14;
+  document.getElementById('rtb-travellers').value = 2;
+  document.getElementById('rtb-camp-nights').value = 7;
+  document.getElementById('rtb-motel-nights').value = 5;
+  document.getElementById('rtb-friend-nights').value = 2;
+  document.getElementById('rtb-motel-price').value = 80;
+  document.getElementById('rtb-camp-price').value = 25;
+  document.getElementById('rtb-national-parks').value = 3;
+  document.getElementById('rtb-food').value = 35;
+  document.getElementById('rtb-buffer').value = 10;
+  document.getElementById('rtb-results').style.display = 'none';
+  document.getElementById('rtb-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+renderHistory();
+</script>
+
+</body>
+</html>
