@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Multi-City Trip Cost Calculator | Travel Budget Pro</title>
+<meta name="description" content="Plan an itinerary across multiple cities. See total cost including transport between destinations and city-by-city breakdowns.">
+<meta property="og:title" content="Multi-City Trip Cost Calculator | Travel Budget Pro">
+<meta property="og:description" content="Plan multi-city itineraries with transport and accommodation costs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/multi-city-trip-cost.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/multi-city-trip-cost.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Multi-City Trip Cost Calculator",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Plan an itinerary across multiple cities with total cost including transport between destinations.",
+  "url": "https://travelbudgetpro.org/tools/multi-city-trip-cost.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Multi-City Trip Cost Calculator", "item": "https://travelbudgetpro.org/tools/multi-city-trip-cost.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Multi-City Trip Cost</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Multi-City Trip Cost Calculator</h1>
+  <p>Add cities in order. We estimate accommodation, food, local transport, and the cost of getting from city to city.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Each city gets a daily cost index by travel style (budget/mid/luxury). We multiply nights by style rate for accommodation and daily spending. Inter-city transport is estimated based on mode — train, flight, bus, or mixed.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Add cities in trip order. Enter nights per city and travel style. Choose transport mode between cities. Click Calculate. The pie chart breaks down costs by city and transport. The table shows city-by-city detail.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Save up to 5 itineraries locally. Compare different routes to find the cheapest option. Export your itinerary as a text file with full cost breakdowns. Add or remove cities anytime — just recalculate.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Your Itinerary</h3>
+      <div id="mct-cities">
+        <div class="mct-city-row" style="display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-bottom:12px;align-items:end;">
+          <div class="tbp-input-group" style="margin-bottom:0;">
+            <label>City</label>
+            <input type="text" class="mct-city-name" placeholder="e.g. Paris" value="Paris">
+          </div>
+          <div class="tbp-input-group" style="margin-bottom:0;">
+            <label>Nights</label>
+            <input type="number" class="mct-city-nights" min="1" value="3">
+          </div>
+          <div class="tbp-input-group" style="margin-bottom:0;">
+            <label>Style</label>
+            <select class="mct-city-style">
+              <option value="budget">Budget</option>
+              <option value="mid" selected>Mid</option>
+              <option value="luxury">Luxury</option>
+            </select>
+          </div>
+          <button onclick="removeCity(this)" style="background:none;border:none;color:#E76F51;cursor:pointer;font-size:1.2rem;">×</button>
+        </div>
+        <div class="mct-city-row" style="display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-bottom:12px;align-items:end;">
+          <div class="tbp-input-group" style="margin-bottom:0;">
+            <label>City</label>
+            <input type="text" class="mct-city-name" placeholder="e.g. Amsterdam" value="Amsterdam">
+          </div>
+          <div class="tbp-input-group" style="margin-bottom:0;">
+            <label>Nights</label>
+            <input type="number" class="mct-city-nights" min="1" value="2">
+          </div>
+          <div class="tbp-input-group" style="margin-bottom:0;">
+            <label>Style</label>
+            <select class="mct-city-style">
+              <option value="budget">Budget</option>
+              <option value="mid" selected>Mid</option>
+              <option value="luxury">Luxury</option>
+            </select>
+          </div>
+          <button onclick="removeCity(this)" style="background:none;border:none;color:#E76F51;cursor:pointer;font-size:1.2rem;">×</button>
+        </div>
+      </div>
+      <button class="tbp-btn tbp-btn-secondary" onclick="addCity()" style="width:100%;margin-bottom:16px;">+ Add Another City</button>
+
+      <div class="tbp-input-group">
+        <label for="mct-transport">Transport Between Cities</label>
+        <select id="mct-transport">
+          <option value="train">Train (Europe/Asia)</option>
+          <option value="flight">Flight</option>
+          <option value="bus">Bus</option>
+          <option value="mixed">Mixed (estimate)</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="mct-travellers">Number of Travellers</label>
+        <input type="number" id="mct-travellers" min="1" value="1">
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="calculateMultiCity()">Calculate Total</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetMultiCity()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Cost Breakdown</h3>
+      <div id="mct-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Total Trip Cost</div>
+          <div class="tbp-result-number" id="mct-total">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Accommodation Total</div>
+          <div class="tbp-result-number" id="mct-accommodation">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Daily Spending Total</div>
+          <div class="tbp-result-number" id="mct-daily">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Inter-City Transport</div>
+          <div class="tbp-result-number" id="mct-intercity">$0</div>
+        </div>
+        <canvas id="mct-chart" class="tbp-chart-container" width="400" height="250"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveMultiCity()">Save Itinerary</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportMultiCity()">Export</button>
+        </div>
+      </div>
+      <div id="mct-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">🌍</div>
+        <p>Add cities and click Calculate to see your multi-city budget.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Saved Itineraries</h3>
+      <div id="mct-history" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No saved itineraries yet.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>City-by-City Breakdown</h3>
+      <div id="mct-city-breakdown" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Calculate to see per-city costs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid">
+    <a href="../blog/step-by-step-planning-a-multi-city-european-trip-budget-with.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Step-by-Step: Planning a Multi-City European Trip</h3>
+        <p>Hannah's six-city itinerary with real train prices and hotel costs.</p>
+      </div>
+    </a>
+    <a href="../blog/walking-through-the-multi-city-trip-cost-tool-europe-asia-an.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Walking Through the Multi-City Trip Cost Tool</h3>
+        <p>Priya's 10-city Southeast Asia route estimated at $2,800.</p>
+      </div>
+    </a>
+    <a href="../blog/backpacking-europe-in-2026-budget-ranges-rail-pass-math-and-.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>Backpacking Europe in 2026: Rail Pass Math</h3>
+        <p>Interrail pass vs individual tickets — which saves more?</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+// Daily costs per city per style (USD)
+const CITY_COSTS = {
+  budget: {accommodation: 25, food: 15, transport: 8, activities: 10, misc: 5},
+  mid: {accommodation: 80, food: 40, transport: 15, activities: 25, misc: 10},
+  luxury: {accommodation: 250, food: 100, transport: 50, activities: 80, misc: 30}
+};
+
+const INTERCITY_COSTS = {
+  train: 60, flight: 120, bus: 30, mixed: 80
+};
+
+let currentResult = null;
+
+function addCity() {
+  const container = document.getElementById('mct-cities');
+  const div = document.createElement('div');
+  div.className = 'mct-city-row';
+  div.style.cssText = 'display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-bottom:12px;align-items:end;';
+  div.innerHTML = '<div class="tbp-input-group" style="margin-bottom:0;"><label>City</label><input type="text" class="mct-city-name" placeholder="City name"></div>' +
+    '<div class="tbp-input-group" style="margin-bottom:0;"><label>Nights</label><input type="number" class="mct-city-nights" min="1" value="2"></div>' +
+    '<div class="tbp-input-group" style="margin-bottom:0;"><label>Style</label><select class="mct-city-style"><option value="budget">Budget</option><option value="mid" selected>Mid</option><option value="luxury">Luxury</option></select></div>' +
+    '<button onclick="removeCity(this)" style="background:none;border:none;color:#E76F51;cursor:pointer;font-size:1.2rem;">×</button>';
+  container.appendChild(div);
+}
+
+function removeCity(btn) {
+  btn.parentElement.remove();
+}
+
+function calculateMultiCity() {
+  const rows = document.querySelectorAll('.mct-city-row');
+  const cities = [];
+  rows.forEach(row => {
+    const name = row.querySelector('.mct-city-name').value.trim();
+    const nights = parseInt(row.querySelector('.mct-city-nights').value) || 1;
+    const style = row.querySelector('.mct-city-style').value;
+    if (name) cities.push({name, nights, style});
+  });
+
+  if (cities.length < 2) { alert('Please add at least 2 cities.'); return; }
+
+  const transport = document.getElementById('mct-transport').value;
+  const travellers = parseInt(document.getElementById('mct-travellers').value) || 1;
+  const interCityCost = INTERCITY_COSTS[transport] * (cities.length - 1) * travellers;
+
+  let accommodationTotal = 0;
+  let dailyTotal = 0;
+  const cityBreakdown = [];
+
+  cities.forEach(city => {
+    const costs = CITY_COSTS[city.style];
+    const acc = costs.accommodation * city.nights * travellers;
+    const daily = (costs.food + costs.transport + costs.activities + costs.misc) * city.nights * travellers;
+    accommodationTotal += acc;
+    dailyTotal += daily;
+    cityBreakdown.push({
+      name: city.name,
+      nights: city.nights,
+      style: city.style,
+      accommodation: acc,
+      daily: daily,
+      total: acc + daily
+    });
+  });
+
+  const total = accommodationTotal + dailyTotal + interCityCost;
+
+  currentResult = {
+    id: Date.now(),
+    cities: cities,
+    transport: transport,
+    travellers: travellers,
+    total: total,
+    accommodation: accommodationTotal,
+    daily: dailyTotal,
+    intercity: interCityCost,
+    breakdown: cityBreakdown
+  };
+
+  document.getElementById('mct-total').textContent = '$' + total.toLocaleString();
+  document.getElementById('mct-accommodation').textContent = '$' + accommodationTotal.toLocaleString();
+  document.getElementById('mct-daily').textContent = '$' + dailyTotal.toLocaleString();
+  document.getElementById('mct-intercity').textContent = '$' + interCityCost.toLocaleString();
+  document.getElementById('mct-results').style.display = 'block';
+  document.getElementById('mct-placeholder').style.display = 'none';
+
+  drawMultiCityChart(cityBreakdown, interCityCost);
+  renderCityBreakdown(cityBreakdown);
+}
+
+function drawMultiCityChart(breakdown, intercity) {
+  const canvas = document.getElementById('mct-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  const labels = breakdown.map(c => c.name);
+  const values = breakdown.map(c => c.total);
+  if (intercity > 0) {
+    labels.push('Transport');
+    values.push(intercity);
+  }
+  const total = values.reduce((a,b) => a+b, 0);
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7', '#E76F51', '#6c757d', '#2a9d8f', '#e9c46a', '#f4a261'];
+
+  const cx = rect.width / 2;
+  const cy = rect.height / 2;
+  const radius = Math.min(cx, cy) - 50;
+
+  let start = -Math.PI / 2;
+  values.forEach((v, i) => {
+    const angle = (v / total) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, radius, start, start + angle);
+    ctx.closePath();
+    ctx.fillStyle = colors[i % colors.length];
+    ctx.fill();
+    start += angle;
+  });
+
+  // Legend
+  let ly = 10;
+  labels.forEach((l, i) => {
+    ctx.fillStyle = colors[i % colors.length];
+    ctx.fillRect(8, ly, 10, 10);
+    ctx.fillStyle = '#212529';
+    ctx.font = '11px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(l + ' $' + values[i].toLocaleString(), 22, ly + 9);
+    ly += 18;
+  });
+
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Total: $' + total.toLocaleString(), cx, cy + 4);
+}
+
+function renderCityBreakdown(breakdown) {
+  const container = document.getElementById('mct-city-breakdown');
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>City</th><th>Nights</th><th>Accommodation</th><th>Daily</th><th>Total</th></tr></thead><tbody>';
+  breakdown.forEach(c => {
+    html += '<tr><td><strong>' + c.name + '</strong></td><td>' + c.nights + '</td>';
+    html += '<td>$' + c.accommodation.toLocaleString() + '</td>';
+    html += '<td>$' + c.daily.toLocaleString() + '</td>';
+    html += '<td>$' + c.total.toLocaleString() + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function saveMultiCity() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('mct-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 5) history = history.slice(0, 5);
+  localStorage.setItem('mct-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('mct-history') || '[]');
+  const container = document.getElementById('mct-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No saved itineraries yet.</p>';
+    return;
+  }
+  let html = '';
+  history.forEach((h, idx) => {
+    const cityNames = h.cities.map(c => c.name).join(' → ');
+    html += '<div style="background:var(--tbp-bg);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="loadHistory(' + idx + ')">';
+    html += '<div style="font-weight:700;font-size:0.9rem;">' + cityNames + '</div>';
+    html += '<div style="font-size:0.8rem;color:var(--tbp-muted);">Total: $' + h.total.toLocaleString() + ' · ' + h.cities.length + ' cities</div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('mct-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+
+  // Rebuild city rows
+  const container = document.getElementById('mct-cities');
+  container.innerHTML = '';
+  h.cities.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'mct-city-row';
+    div.style.cssText = 'display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-bottom:12px;align-items:end;';
+    div.innerHTML = '<div class="tbp-input-group" style="margin-bottom:0;"><label>City</label><input type="text" class="mct-city-name" value="' + c.name + '"></div>' +
+      '<div class="tbp-input-group" style="margin-bottom:0;"><label>Nights</label><input type="number" class="mct-city-nights" min="1" value="' + c.nights + '"></div>' +
+      '<div class="tbp-input-group" style="margin-bottom:0;"><label>Style</label><select class="mct-city-style"><option value="budget"' + (c.style==='budget'?' selected':'') + '>Budget</option><option value="mid"' + (c.style==='mid'?' selected':'') + '>Mid</option><option value="luxury"' + (c.style==='luxury'?' selected':'') + '>Luxury</option></select></div>' +
+      '<button onclick="removeCity(this)" style="background:none;border:none;color:#E76F51;cursor:pointer;font-size:1.2rem;">×</button>';
+    container.appendChild(div);
+  });
+  document.getElementById('mct-transport').value = h.transport;
+  document.getElementById('mct-travellers').value = h.travellers;
+  currentResult = h;
+  document.getElementById('mct-total').textContent = '$' + h.total.toLocaleString();
+  document.getElementById('mct-accommodation').textContent = '$' + h.accommodation.toLocaleString();
+  document.getElementById('mct-daily').textContent = '$' + h.daily.toLocaleString();
+  document.getElementById('mct-intercity').textContent = '$' + h.intercity.toLocaleString();
+  document.getElementById('mct-results').style.display = 'block';
+  document.getElementById('mct-placeholder').style.display = 'none';
+  drawMultiCityChart(h.breakdown, h.intercity);
+  renderCityBreakdown(h.breakdown);
+}
+
+function exportMultiCity() {
+  if (!currentResult) return;
+  const h = currentResult;
+  const cityNames = h.cities.map(c => c.name).join(' → ');
+  let text = 'MULTI-CITY TRIP REPORT — Travel Budget Pro
+';
+  text += 'Generated: ' + new Date().toLocaleString() + '
+
+';
+  text += 'Itinerary: ' + cityNames + '
+';
+  text += 'Travellers: ' + h.travellers + '
+';
+  text += 'Transport: ' + h.transport + '
+
+';
+  text += 'COST SUMMARY
+';
+  text += 'Total: $' + h.total.toLocaleString() + '
+';
+  text += 'Accommodation: $' + h.accommodation.toLocaleString() + '
+';
+  text += 'Daily Spending: $' + h.daily.toLocaleString() + '
+';
+  text += 'Inter-City Transport: $' + h.intercity.toLocaleString() + '
+
+';
+  text += 'CITY BREAKDOWN
+';
+  text += 'City,Nights,Accommodation,Daily,Total
+';
+  h.breakdown.forEach(c => {
+    text += c.name + ',' + c.nights + ',' + c.accommodation + ',' + c.daily + ',' + c.total + '
+';
+  });
+
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'multi-city-trip-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetMultiCity() {
+  document.getElementById('mct-cities').innerHTML = '';
+  addCity();
+  addCity();
+  document.getElementById('mct-transport').value = 'train';
+  document.getElementById('mct-travellers').value = '1';
+  document.getElementById('mct-results').style.display = 'none';
+  document.getElementById('mct-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+renderHistory();
+</script>
+
+</body>
+</html>
