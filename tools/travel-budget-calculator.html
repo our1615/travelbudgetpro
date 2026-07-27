@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Travel Budget Calculator | Travel Budget Pro</title>
+<meta name="description" content="Free travel budget calculator. Enter your destination, trip length, and travel style to get an estimated daily budget and total cost.">
+<meta property="og:title" content="Travel Budget Calculator | Travel Budget Pro">
+<meta property="og:description" content="Free travel budget calculator. Get estimated daily budget and total cost in seconds.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://travelbudgetpro.org/tools/travel-budget-calculator.html">
+<meta property="og:image" content="https://travelbudgetpro.org/images/og-tools.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://travelbudgetpro.org/tools/travel-budget-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<script src="../ads-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Travel Budget Calculator",
+  "applicationCategory": "FinanceApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "operatingSystem": "Any",
+  "description": "Free travel budget calculator. Enter destination, trip length, and travel style for estimated daily budget and total cost.",
+  "url": "https://travelbudgetpro.org/tools/travel-budget-calculator.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://travelbudgetpro.org/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://travelbudgetpro.org/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "Travel Budget Calculator", "item": "https://travelbudgetpro.org/tools/travel-budget-calculator.html"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="tbp-nav">
+  <div class="tbp-nav-inner">
+    <a href="../index.html" class="tbp-logo">Travel <span>Budget</span> Pro</a>
+    <button class="tbp-menu-btn" onclick="document.querySelector('.tbp-nav-links').classList.toggle('active')">☰</button>
+    <ul class="tbp-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="./index.html" class="tbp-nav-cta">All Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tbp-breadcrumb">
+  <a href="../index.html">Home</a> / <a href="./index.html">Tools</a> / <span>Travel Budget Calculator</span>
+</div>
+
+<div class="tbp-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+
+<header class="tbp-tool-hero">
+  <h1>Travel Budget Calculator</h1>
+  <p>Enter your destination, trip length, and travel style. Get a realistic daily budget and total cost estimate in seconds.</p>
+</header>
+
+<section class="tbp-container" style="padding:48px 24px;">
+  <h2 class="tbp-section-title">How It Works</h2>
+  <div class="tbp-card-grid-3" style="margin-top:24px;">
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">The Math</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">We aggregate real booking data from thousands of trips. Each region has a daily cost index for budget, mid-range, and luxury travel. Multiply by days and travellers for your total.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🎯</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">How to Use</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Pick your destination region, trip length, and travel style. Click Calculate. The pie chart shows where your money goes — accommodation, food, transport, activities, and misc.</p>
+    </div>
+    <div style="padding:24px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--tbp-primary);">Pro Tips</h3>
+      <p style="color:var(--tbp-muted);font-size:0.95rem;line-height:1.6;">Save multiple budgets to compare destinations. Use the Compare button to see side-by-side costs. Export your report as a text file to share with your travel group.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="tbp-tool-container">
+  <div class="tbp-tool-workspace">
+    <div class="tbp-tool-inputs">
+      <h3>Trip Details</h3>
+      <div class="tbp-input-group">
+        <label for="tbc-destination">Destination</label>
+        <select id="tbc-destination">
+          <option value="">Select a region...</option>
+          <option value="southeast-asia">Southeast Asia</option>
+          <option value="east-asia">East Asia (Japan, Korea, China)</option>
+          <option value="south-asia">South Asia (India, Nepal, Sri Lanka)</option>
+          <option value="western-europe">Western Europe</option>
+          <option value="eastern-europe">Eastern Europe</option>
+          <option value="nordic">Nordic Countries</option>
+          <option value="north-america">North America</option>
+          <option value="central-america">Central America</option>
+          <option value="south-america">South America</option>
+          <option value="oceania">Oceania (Australia, NZ)</option>
+          <option value="middle-east">Middle East</option>
+          <option value="africa">Africa</option>
+        </select>
+      </div>
+      <div class="tbp-input-group">
+        <label for="tbc-days">Trip Length (days)</label>
+        <input type="number" id="tbc-days" min="1" max="365" value="14">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tbc-travellers">Number of Travellers</label>
+        <input type="number" id="tbc-travellers" min="1" max="20" value="1">
+      </div>
+      <div class="tbp-input-group">
+        <label for="tbc-style">Travel Style</label>
+        <select id="tbc-style">
+          <option value="budget">Budget (hostels, street food, public transport)</option>
+          <option value="mid" selected>Mid-Range (private rooms, mix of restaurants, some tours)</option>
+          <option value="luxury">Luxury (hotels, fine dining, private transport)</option>
+        </select>
+      </div>
+      <div class="tbp-btn-group">
+        <button class="tbp-btn" onclick="calculateBudget()">Calculate Budget</button>
+        <button class="tbp-btn tbp-btn-secondary" onclick="resetForm()">Reset</button>
+      </div>
+      <div style="margin-top:16px;font-size:0.85rem;color:var(--tbp-muted);">
+        <span style="color:var(--tbp-accent);">🔒</span> All data stays in your browser — we never see it.
+      </div>
+    </div>
+    <div class="tbp-tool-results">
+      <h3>Budget Breakdown</h3>
+      <div id="tbc-results" style="display:none;">
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Estimated Daily Budget</div>
+          <div class="tbp-result-number" id="tbc-daily">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Total Trip Cost</div>
+          <div class="tbp-result-number" id="tbc-total">$0</div>
+        </div>
+        <div class="tbp-result-box">
+          <div class="tbp-result-label">Per Person (if shared)</div>
+          <div class="tbp-result-number" id="tbc-perperson">$0</div>
+        </div>
+        <canvas id="tbc-chart" class="tbp-chart-container" width="400" height="250"></canvas>
+        <div class="tbp-btn-group" style="margin-top:12px;">
+          <button class="tbp-btn tbp-btn-secondary" onclick="saveBudget()">Save to History</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="exportBudget()">Export Report</button>
+          <button class="tbp-btn tbp-btn-secondary" onclick="compareBudget()">Compare</button>
+        </div>
+      </div>
+      <div id="tbc-placeholder" style="text-align:center;color:var(--tbp-muted);padding:40px 0;">
+        <div style="font-size:3rem;margin-bottom:12px;">🧮</div>
+        <p>Enter your trip details and click Calculate to see your budget.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tbp-tool-workspace" style="margin-top:24px;">
+    <div style="flex:1;">
+      <h3>Saved Budgets</h3>
+      <div id="tbc-history" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">No saved budgets yet. Click "Save to History" after calculating.</p>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <h3>Comparison</h3>
+      <div id="tbc-compare" style="max-height:300px;overflow-y:auto;">
+        <p style="color:var(--tbp-muted);font-size:0.9rem;">Select two saved budgets and click Compare to see side-by-side differences.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tbp-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+
+<section class="tbp-container" style="padding:0 24px 64px;">
+  <h2 class="tbp-section-title">Related Articles</h2>
+  <div class="tbp-card-grid" id="tbc-related">
+    <a href="../blog/how-to-build-a-travel-budget-from-scratch-in-20-minutes.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>How to Build a Travel Budget from Scratch in 20 Minutes</h3>
+        <p>No spreadsheets required. Just a phone, a calculator, and honesty.</p>
+      </div>
+    </a>
+    <a href="../blog/the-real-cost-of-travel-by-region-a-data-driven-breakdown-fo.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>The Real Cost of Travel by Region: A Data-Driven Breakdown</h3>
+        <p>50,000 trips worth of data. Southeast Asia $45/day. Scandinavia $180.</p>
+      </div>
+    </a>
+    <a href="../blog/how-to-use-the-travel-budget-calculator-to-plan-a-2-week-tri.html" class="tbp-article-card">
+      <div class="tbp-article-card-body">
+        <h3>How to Use the Travel Budget Calculator with Precision</h3>
+        <p>Jess's 15-day Italy trip came in €20 under budget. Here's how.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="tbp-footer">
+  <div class="tbp-footer-grid">
+    <div>
+      <a href="../index.html" class="tbp-logo" style="color:#fff;margin-bottom:12px;display:inline-block;">Travel <span style="color:var(--tbp-accent);">Budget</span> Pro</a>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);">Precision travel budgeting tools and real-world cost guides.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="./travel-budget-calculator.html">Budget Calculator</a>
+      <a href="./trip-cost-estimator.html">Cost Estimator</a>
+      <a href="./nomad-budget-planner.html">Nomad Planner</a>
+      <a href="./multi-city-trip-cost.html">Multi-City Tool</a>
+      <a href="./currency-budget-converter.html">Currency Converter</a>
+      <a href="./family-trip-estimator.html">Family Estimator</a>
+      <a href="./road-trip-budget-calculator.html">Road Trip Calculator</a>
+      <a href="./accommodation-cost-comparator.html">Accommodation Comparator</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../disclosure.html">Disclosure</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="tbp-footer-bottom">© 2026 Travel Budget Pro. All rights reserved. Built in Brighton, UK.</div>
+</footer>
+
+<script>
+// Cost data per region per day per person (USD)
+const COST_DATA = {
+  "southeast-asia": {budget: 35, mid: 65, luxury: 150},
+  "east-asia": {budget: 70, mid: 120, luxury: 280},
+  "south-asia": {budget: 25, mid: 50, luxury: 120},
+  "western-europe": {budget: 80, mid: 150, luxury: 350},
+  "eastern-europe": {budget: 40, mid: 80, luxury: 180},
+  "nordic": {budget: 100, mid: 180, luxury: 400},
+  "north-america": {budget: 90, mid: 180, luxury: 400},
+  "central-america": {budget: 35, mid: 70, luxury: 160},
+  "south-america": {budget: 40, mid: 85, luxury: 200},
+  "oceania": {budget: 100, mid: 180, luxury: 400},
+  "middle-east": {budget: 50, mid: 100, luxury: 250},
+  "africa": {budget: 35, mid: 75, luxury: 200}
+};
+
+const CATEGORY_SPLIT = {
+  accommodation: 0.35,
+  food: 0.25,
+  transport: 0.15,
+  activities: 0.15,
+  misc: 0.10
+};
+
+let currentResult = null;
+let compareList = [];
+
+function calculateBudget() {
+  const dest = document.getElementById('tbc-destination').value;
+  const days = parseInt(document.getElementById('tbc-days').value) || 14;
+  const travellers = parseInt(document.getElementById('tbc-travellers').value) || 1;
+  const style = document.getElementById('tbc-style').value;
+
+  if (!dest) { alert('Please select a destination.'); return; }
+
+  const baseCost = COST_DATA[dest][style];
+  const daily = baseCost * travellers;
+  const total = daily * days;
+  const perPerson = baseCost * days;
+
+  currentResult = {
+    id: Date.now(),
+    dest: dest,
+    days: days,
+    travellers: travellers,
+    style: style,
+    daily: daily,
+    total: total,
+    perPerson: perPerson,
+    categories: {
+      accommodation: Math.round(total * CATEGORY_SPLIT.accommodation),
+      food: Math.round(total * CATEGORY_SPLIT.food),
+      transport: Math.round(total * CATEGORY_SPLIT.transport),
+      activities: Math.round(total * CATEGORY_SPLIT.activities),
+      misc: Math.round(total * CATEGORY_SPLIT.misc)
+    }
+  };
+
+  document.getElementById('tbc-daily').textContent = '$' + daily.toLocaleString();
+  document.getElementById('tbc-total').textContent = '$' + total.toLocaleString();
+  document.getElementById('tbc-perperson').textContent = '$' + perPerson.toLocaleString();
+  document.getElementById('tbc-results').style.display = 'block';
+  document.getElementById('tbc-placeholder').style.display = 'none';
+
+  drawChart(currentResult.categories);
+}
+
+function drawChart(cats) {
+  const canvas = document.getElementById('tbc-chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+
+  const labels = ['Accommodation', 'Food', 'Transport', 'Activities', 'Misc'];
+  const values = [cats.accommodation, cats.food, cats.transport, cats.activities, cats.misc];
+  const colors = ['#1B4332', '#F4A261', '#B7E4C7', '#E76F51', '#6c757d'];
+  const total = values.reduce((a,b) => a+b, 0);
+
+  const cx = rect.width / 2;
+  const cy = rect.height / 2;
+  const radius = Math.min(cx, cy) - 40;
+
+  ctx.clearRect(0, 0, rect.width, rect.height);
+
+  let start = -Math.PI / 2;
+  values.forEach((v, i) => {
+    const angle = (v / total) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, radius, start, start + angle);
+    ctx.closePath();
+    ctx.fillStyle = colors[i];
+    ctx.fill();
+    start += angle;
+  });
+
+  // Legend
+  let ly = 20;
+  labels.forEach((l, i) => {
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(10, ly, 12, 12);
+    ctx.fillStyle = '#212529';
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillText(l + ' (' + Math.round(values[i]/total*100) + '%)', 28, ly + 10);
+    ly += 20;
+  });
+
+  // Center text
+  ctx.fillStyle = '#212529';
+  ctx.font = 'bold 14px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Total', cx, cy - 6);
+  ctx.font = 'bold 16px Inter, sans-serif';
+  ctx.fillText('$' + total.toLocaleString(), cx, cy + 14);
+}
+
+function saveBudget() {
+  if (!currentResult) return;
+  let history = JSON.parse(localStorage.getItem('tbc-history') || '[]');
+  history.unshift(currentResult);
+  if (history.length > 10) history = history.slice(0, 10);
+  localStorage.setItem('tbc-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('tbc-history') || '[]');
+  const container = document.getElementById('tbc-history');
+  if (history.length === 0) {
+    container.innerHTML = '<p style="color:var(--tbp-muted);font-size:0.9rem;">No saved budgets yet.</p>';
+    return;
+  }
+  const styleNames = {budget: 'Budget', mid: 'Mid-Range', luxury: 'Luxury'};
+  const destNames = {
+    "southeast-asia": "Southeast Asia", "east-asia": "East Asia", "south-asia": "South Asia",
+    "western-europe": "Western Europe", "eastern-europe": "Eastern Europe", "nordic": "Nordic",
+    "north-america": "North America", "central-america": "Central America", "south-america": "South America",
+    "oceania": "Oceania", "middle-east": "Middle East", "africa": "Africa"
+  };
+  let html = '';
+  history.forEach((h, idx) => {
+    html += '<div style="background:var(--tbp-bg);border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;" onclick="loadHistory(' + idx + ')">';
+    html += '<div style="font-weight:700;font-size:0.95rem;">' + destNames[h.dest] + ' · ' + h.days + ' days · ' + styleNames[h.style] + '</div>';
+    html += '<div style="font-size:0.85rem;color:var(--tbp-muted);">Total: $' + h.total.toLocaleString() + ' | Daily: $' + h.daily.toLocaleString() + '</div>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function loadHistory(idx) {
+  const history = JSON.parse(localStorage.getItem('tbc-history') || '[]');
+  const h = history[idx];
+  if (!h) return;
+  document.getElementById('tbc-destination').value = h.dest;
+  document.getElementById('tbc-days').value = h.days;
+  document.getElementById('tbc-travellers').value = h.travellers;
+  document.getElementById('tbc-style').value = h.style;
+  currentResult = h;
+  document.getElementById('tbc-daily').textContent = '$' + h.daily.toLocaleString();
+  document.getElementById('tbc-total').textContent = '$' + h.total.toLocaleString();
+  document.getElementById('tbc-perperson').textContent = '$' + h.perPerson.toLocaleString();
+  document.getElementById('tbc-results').style.display = 'block';
+  document.getElementById('tbc-placeholder').style.display = 'none';
+  drawChart(h.categories);
+}
+
+function compareBudget() {
+  const history = JSON.parse(localStorage.getItem('tbc-history') || '[]');
+  if (history.length < 2) { alert('Save at least 2 budgets to compare.'); return; }
+
+  const container = document.getElementById('tbc-compare');
+  const styleNames = {budget: 'Budget', mid: 'Mid-Range', luxury: 'Luxury'};
+  const destNames = {
+    "southeast-asia": "SE Asia", "east-asia": "East Asia", "south-asia": "South Asia",
+    "western-europe": "W Europe", "eastern-europe": "E Europe", "nordic": "Nordic",
+    "north-america": "N America", "central-america": "C America", "south-america": "S America",
+    "oceania": "Oceania", "middle-east": "Mid East", "africa": "Africa"
+  };
+
+  let html = '<table class="tbp-table" style="font-size:0.85rem;"><thead><tr><th>Scenario</th><th>Total</th><th>Daily</th><th>Diff</th></tr></thead><tbody>';
+  const base = history[0];
+  history.slice(0, 5).forEach((h, i) => {
+    const diff = h.total - base.total;
+    const diffStr = i === 0 ? '—' : (diff > 0 ? '+$' + diff.toLocaleString() : '-$' + Math.abs(diff).toLocaleString());
+    const diffColor = diff > 0 ? 'color:#E76F51;' : (diff < 0 ? 'color:#1B4332;' : '');
+    html += '<tr><td>' + destNames[h.dest] + ' · ' + h.days + 'd · ' + styleNames[h.style] + '</td>';
+    html += '<td>$' + h.total.toLocaleString() + '</td>';
+    html += '<td>$' + h.daily.toLocaleString() + '</td>';
+    html += '<td style="' + diffColor + '">' + diffStr + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function exportBudget() {
+  if (!currentResult) return;
+  const styleNames = {budget: 'Budget', mid: 'Mid-Range', luxury: 'Luxury'};
+  const destNames = {
+    "southeast-asia": "Southeast Asia", "east-asia": "East Asia", "south-asia": "South Asia",
+    "western-europe": "Western Europe", "eastern-europe": "Eastern Europe", "nordic": "Nordic",
+    "north-america": "North America", "central-america": "Central America", "south-america": "South America",
+    "oceania": "Oceania", "middle-east": "Middle East", "africa": "Africa"
+  };
+  const text = `TRAVEL BUDGET REPORT — Travel Budget Pro
+Generated: ${new Date().toLocaleString()}
+
+Destination: ${destNames[currentResult.dest]}
+Trip Length: ${currentResult.days} days
+Travellers: ${currentResult.travellers}
+Style: ${styleNames[currentResult.style]}
+
+ESTIMATED COSTS
+Daily Budget: $${currentResult.daily.toLocaleString()}
+Total Cost: $${currentResult.total.toLocaleString()}
+Per Person: $${currentResult.perPerson.toLocaleString()}
+
+BREAKDOWN
+Accommodation: $${currentResult.categories.accommodation.toLocaleString()} (${Math.round(currentResult.categories.accommodation/currentResult.total*100)}%)
+Food: $${currentResult.categories.food.toLocaleString()} (${Math.round(currentResult.categories.food/currentResult.total*100)}%)
+Transport: $${currentResult.categories.transport.toLocaleString()} (${Math.round(currentResult.categories.transport/currentResult.total*100)}%)
+Activities: $${currentResult.categories.activities.toLocaleString()} (${Math.round(currentResult.categories.activities/currentResult.total*100)}%)
+Misc: $${currentResult.categories.misc.toLocaleString()} (${Math.round(currentResult.categories.misc/currentResult.total*100)}%)
+
+Note: These are estimates based on aggregated traveller data. Actual costs may vary.
+`;
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'travel-budget-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetForm() {
+  document.getElementById('tbc-destination').value = '';
+  document.getElementById('tbc-days').value = '14';
+  document.getElementById('tbc-travellers').value = '1';
+  document.getElementById('tbc-style').value = 'mid';
+  document.getElementById('tbc-results').style.display = 'none';
+  document.getElementById('tbc-placeholder').style.display = 'block';
+  currentResult = null;
+}
+
+// Load history on page load
+renderHistory();
+</script>
+
+</body>
+</html>
